@@ -1,0 +1,323 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[pdftex]{hyperref}
+\usepackage{floatflt}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{framed}
+\usepackage{changes}
+\usepackage{tikz}
+\usepackage{capt-of}
+\usepackage{diagbox}
+\usetikzlibrary{arrows.meta}
+\usepackage[thmmarks, thref]{ntheorem}
+\usepackage{amsmath, amssymb}
+\usepackage{eurosym}
+%\usepackage[amsmath, thmmarks, thref]{ntheorem}
+\usepackage{verbatim}
+\usepackage{fancyhdr}
+\usepackage[hang]{footmisc}
+\renewcommand{\subsectionmark}[\thepage]{\markright{{#1}}}
+\textheight220mm
+\headheight 28pt
+\textwidth160mm
+\oddsidemargin0mm
+\evensidemargin0mm
+\topmargin0mm
+\pagestyle{headings}
+\fancyhead[R]{\sectionmark}
+\newcommand{\F}{\mathbb F}
+\newcommand{\f}{\mathbb f}
+\newcommand{\K}{\mathbb K}
+\newcommand{\R}{\mathcal R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\A}{\mathcal A}
+\newcommand{\C}{\mathcal C}
+\newcommand{\D}{\mathcal D}
+\newcommand{\X}{\mathcal X}
+\newcommand{\Y}{\mathcal Y}
+\newcommand{\xL}{\mathcal L}
+\newcommand{\xP}{\mathcal P}
+\newcounter{Hilfssatz}
+\newcounter{Definition}
+\newcounter{Beispiel}
+\newcounter{Satz}
+\newcounter{Algorithmus}
+
+
+
+\setlength{\parindent}{0pt}
+\makeatletter
+  \@addtoreset{Definition}{subsection}
+\makeatother
+\newenvironment{Definition}{
+\bigskip
+        
+        \setlength{\parindent}{0pt}
+        \addtocounter{Definition}{1}
+        \textbf{\textsf{Definition \thesubsection.\theDefinition}:}\\}{
+        \nopagebreak
+        \vspace{-1.0ex}
+        \bigskip
+        
+}
+\makeatletter
+  \@addtoreset{Hilfssatz}{subsection}
+\makeatother
+\newenvironment{Hilfssatz}{
+\medskip
+        
+        \setlength{\parindent}{0pt}
+        \addtocounter{Hilfssatz}{1}
+        \textbf{\textsf{Hilfssatz \thesubsection.\theHilfssatz}:}\\}{
+        \nopagebreak
+        \vspace{-1.0ex}
+        \bigskip\\
+        
+}
+
+\makeatletter
+  \@addtoreset{Satz}{subsection}
+\makeatother
+\newenvironment{Satz}{
+\medskip
+        
+        \setlength{\parindent}{0pt}
+        \addtocounter{Satz}{1}
+        \textbf{\textsf{Satz \thesubsection.\theSatz}:}\\}{
+        \nopagebreak
+        \vspace{-1.0ex}
+        \bigskip\\
+        
+}
+
+\makeatletter
+  \@addtoreset{Beispiel}{subsection}
+\makeatother
+\newenvironment{Beispiel}{
+\medskip
+        
+        \setlength{\parindent}{0pt}
+        \addtocounter{Beispiel}{1}
+        \textbf{\textsf{Beispiel \thesubsection.\theBeispiel}:}\\}{
+        \nopagebreak
+        \vspace{-1.0ex}
+        \bigskip
+        
+}
+
+\setlength{\parindent}{0pt}
+\newenvironment{proof}{
+\bigskip
+        
+        \setlength{\parindent}{0pt}
+        \textbf{Beweis:}\\}{
+        \nopagebreak
+        \vspace{-1.0ex}
+        \begin{flushright}
+             $\square$
+        \end{flushright}
+        \bigskip
+        
+}
+
+\makeatletter
+  \@addtoreset{Algorithmus}{subsection}
+\makeatother
+\newenvironment{Algorithmus}{
+\medskip
+        
+        \setlength{\parindent}{0pt}
+        \addtocounter{Algorithmus}{1}
+        \textbf{\textsf{Algorithmus \thesubsection.\theAlgorithmus}:}}{
+        \nopagebreak
+        \vspace{-1.0ex}
+        \bigskip
+        
+}
+
+\usepackage{lastpage}% F\"ur die Verweise innerhalb des  Symbolverzeichnisses
+
+\usepackage{nomencl} % Symbolverzeichnis
+\let\symb\nomenclature %% Es genuegt \symb statt \nomenclature zu  schreiben
+\setlength{\nomlabelwidth}{.25\hsize}
+\renewcommand{\nomlabel}[1]{#1 \dotfill}
+\setlength{\nomitemsep}{-\parsep}\renewcommand{\nomname}
+{Symbolverzeichnis}
+
+\setlength{\nomitemsep}{-\parsep}
+\usepackage{array} %notwendig um neue Spaltentypen zu definieren
+\newcolumntype{B}[1]{>{\centering\arraybackslash}m{#1}}
+\makenomenclature
+
+
+
+%Bsp für reelle Zahlen
+\begin{document}
+\begin{titlepage}
+\thispagestyle{empty} \enlargethispage{1.4in}
+
+\begin{center}
+
+\rule[1ex]{157.5mm}{0.5mm}
+
+\LARGE\bf Hochschule für angewandte Wissenschaften Coburg\\
+
+\vfill
+
+\rm Institut für Informatik
+
+
+\begin{figure}
+	    \centering
+				     \includegraphics[width=0.5\textwidth]{Logo.png}
+\end{figure}
+
+\vfill
+
+\Huge \bf Projektbericht Datamining
+
+\vfill
+
+\normalsize Michael Krasser
+
+\vfill
+
+Betreuer:  Dr.~Detlef~Bittner
+
+Abgabe des Berichts: 22 Januar 2019
+
+\vfill
+
+Coburg, \today
+
+\rule[-1ex]{157.5mm}{0.5mm}
+
+\vfill
+
+\end{center}
+
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\pagebreak
+\section{Geschäftsverständnis}
+\subsection{Beschreibung der Situation}
+Das zu untersuchende System beschreibt einen Onlineshop dessen Produktpalette aus Medien wie z.B. CDs, Bücher, Hörbücher, ebooks und ebbok-readern besteht. Um gegenüber großen Online-Anbietern wettbewerbsfähig zu sein muß der Onlineshop regelmäßig Maßnahmen zur Aquise und Kundenbindung ergreifen. Eine Möglichkeit zur Kundenbindung besteht in einer Gutscheinausstellung. 
+
+\subsubsection{Problembeschreibung}
+Viele Kunden tätigen meist nur eine Bestellung im Onlineshop. Es kann keine Vorhersage darüber getroffen werden ob ein Kunde eine weitere Bestellung tätigen oder das Interesse an den Produkten des Onlineshops verloren hat. Das Ziel dieser Arbeit besteht in der Bestimmung der Loyalität des einzelnen Kunden anhand von Merkmalen die sich aus den beigelegten Datensätzen erschließen lassen. Ist die Wahrscheinlichkeit sehr gering, dass ein Kunde einen weiteren Einkauf tätigt, erscheint es sinnvoll diesen mittels eines Gutscheins an den Onlineshop zu erinnern. Ist dagegen die Wahrscheinlicht eines erneuten Einkaufs eher hoch, so versucht die Zusendung eines Gutscheins nur unnötige Kosten.  
+\par
+Um dieses Problem zu lösen, soll mittels des CRISP-DM [IBM-Consortium, 2012] Modells
+und des Datamining-Tools SPSS von IBM eine Bewertung durchgeführt werden, welche die
+Loyalität des Kunden bestimmen soll. Hierfür wurden zwei *.txt-Dateien über Kundendaten geliefert.
+Als Lösung wird eine Abbildung der Kundennummer auf das zu erwartende Kaufverhalten gefordert. 
+
+\subsection{Situationsbewertung}
+
+\subsubsection{Beschreibung der gelieferten Daten}
+Bei den zur Verfügung gestellten Daten  handelt es sich um Auszüge aus den Bestelldaten einer Kundendatenbank.
+Es gibt Spalten für das Datum einer Lieferung, Accounterstellung und der
+ersten Bestellung, Domain und Kundennumer des Kunden und eine Reihe von Flags, die das Kaufverhalten des Kunden beschreiben:
+Es wird registriert ob gebauchte oder importierte Artikel gekauft wurden, wie die Ware zum Kunden gelangt ist, wie der Kunde bezahlt hat, ob die Lieferung zurückgeschickt oder gecancelt wurde und wie viele Artikel der Kunde auf einmal gekauft hat.
+
+\subsubsection{Risikofaktoren}
+
+Das Risiko des Onlineshops liegt in der Versendung zu vieler Gutscheine. Diese Gutscheine können dann auch Kunden erreichen, die auch ohne diese wieder eine Bestelltung getätigt hätten. In diesem Fall verliert der Shop pro Bestellung 5 \euro. Je nachdem, wie viele der Gutscheine zuviel ausgegeben werden, kann
+sich diese Vorgehensweise als unrentabel erweisen. (Einfluß des falsch positiven und des falsch negativen Fehlers bleiben unberücksichtig.)
+
+\subsubsection{Erfolgskriterien}
+Es konnten drei zentrale Erfolgskriterien für das Projekt identifiziert werden:
+\begin{itemize}
+	\item Entscheidung ob ein Kunden einen Gutschein erhält
+	\item Maximierung des Gewinns im Datensatz dmc2010 class.txt
+	\item Ab einem Gewinn von 9.310\euro im Testdatensatz und ? im class-Datensatz liegt ein erfolgreiches Datamining vor
+\end{itemize}
+
+Jeder Gutschein, der an eine Person ausgegeben wurde, die ansonsten nicht wieder bestellen
+würde, ergibt einen Gewinn von 1,50\euro für den Onlineshop. Jeder Kunde, der fälschlicherweise
+einen Gutschein bekommt, bedeutet einen Verlust in  Höhe des Wertes des Gutscheins, hier 5\euro.
+
+Als Referenzwert für die Modellbildung wird folgende Situation
+zugrunde gelegt: Jedem Kunden wird ein Gutschein zugesand.Unter der Annahme, dass jeder dieser Kunden auch wieder eine Bestellung tätigt, erhält man im Testdatensatz (26377 Kunden haben keine Bestellung mehr innerhal)b von 90 Tagen getägt, 6051 aber schon) einen Verlust von
+\begin{align*}
+(26377 *1.50 - 6051*5)\text{\euro} = 9310,50 \text{\euro}
+\end{align*}
+Diese Werte müssen in der Modellbildung übertroffen werden.
+
+\subsection{Projektplanung}
+Für die Projektdurchführung wurde zu Projektbeginn der Aufwand in
+Wochen für die jeweiligen Projektschritte des CRISP-DM Modells geschätzt:
+\begin{itemize}
+	\item Geschäftsverständnis:
+	\item Datenverständnis:
+	\item Datenvorbereitung:
+	\item Modellbildung:
+	\item Evaluierung:
+	\item Bereitstellung:
+\end{itemize}
+
+\section{Datenverständnis}
+\subsection{Datensammlung}
+Einige Attribute des Datensatzes sind weniger erfolgsversprechend als andere. Da bereits eine
+Beschreibung der einzelnen Attribute zugeliefert wurde, kann an dieser Stelle eine Vorsortierung
+der Spalten erfolgen. Um versehentliche Korrelationen mit unwichtigen Daten im Ergebnis der
+Untersuchung zu vermeiden, sollten diese vor der Betrachtung aussortiert werden.
+
+\subsubsection{Erfolgsversprechnende Felder}
+Bewertet wurde die Datenqualität, die Datenplausibilität und der
+Vorteil, den die Daten für die Auswertung ergeben könnten. Das Feld "`datecreated"' kann in Verbindung
+mit dem Feld "`date"' dazu genutzt werden, um die Zeit zwischen der Accounterstellung
+und der ersten Bestellung zu berechnen. Daher werden beide Attribute beibehalten. Auch aus
+den Feldern "`cancel"', "`used"', "`delivpostcode"', "`invoicepostcode"', "`deliverydatepromised"' und "`deliverydatereal"'
+können zusammengesetzte Felder ermittelt werden.
+Zusätzlich sollten die Spalten "`gift"', "`voucher"' und "`newsletter"' für die Auswertung verwendet werden, da sie Aufschluss über das Kaufverhalten des Kunden geben: Durch das Feld
+"`newsletter"' kann beispielsweise erkannt werden, ob der Kunde generell über Interesse an den Produkten
+des Shops verfügt. Die Produktkategorien w0 - w10 können einen Vorteil für die Modellbildung
+bedeuten, allerdings haben sich diese in späteren Analyseschritten als wenig hilfreich für eine
+erfolgreiche Modellierung erwiesen und wurden daher in einem späteren Schritt aussortiert.
+
+\subsubsection{Vernachlässigbare Felder}
+Unwichtige Felder lassen sich anhand verschiedener Merkmale identifizieren. Bei einer
+auffallend schlechten Datenqualität sollte das Feld aussortiert werden(fehlende Einträge, Ausreisser).
+Außerdem existieren Felder, anhand deren Beschreibung bereits erkannt werden
+kann, dass diese keinen Einfluß auf das Ergebnis haben können. Als solche Felder wurden die folgenden identifiziert:
+\begin{itemize}
+	\item "`salutation"'
+	\item "`title"'
+	\item "`domain"'
+\end{itemize}
+E-mail domain, Anrede oder Titel eines Kunden haben sicher wenig bis gar keinen Einfluß auf das Kaufverhalten des Kunden.
+
+\subsection{Datenbeschreibung}
+
+\subsubsection{Datenmenge}
+Im Trainingsdatensatz und dem Vorhersagedatensatz befinden sich 32.428 bzw. 32.427 Datensätze.
+Datenmengen dieser Größe sind für eine vollständige Analyse im Sinne von Big Data nicht
+ausreichend, was sich auch in der späteren Modellierung der Daten zeigte.
+
+\subsubsection{Untersuchung der Daten}
+
+Jede Zeile der Dateien liefert Informationen über eine Bestellung. Jede Bestellung lässt sich eindeutig einem Kunden mittels des
+Feldes "`customernumber"' zuordnen. Anhand der angegebenen Werte der Bestellung lässt sich
+feststellen, ob die versprochene Lieferzeit eingehalten wurde, welche Artikel bestellt wurden
+und wie sich diese zusammensetzen. Weitere Daten sind indirekt enthalten und lassen sich aus vorhandenen Daten ermitteln.
+
+\subsubsection{Konsistenz}
+Felder mit schlechter Datenqualität (fehlende Werte, NULL-Werte, viele Ausreisser,\ldots) sollten unter Verwendung eines Filters entfernt werden.
+Hierzu gehören die Felder "` points "`und "`advertisingdatacode"' (viele fehlende Werte), "`invoicepostcode"' und "`deliverydatereal"' (NULL-Werte).
+%Jedoch mussten diese beiden Felder zun¨achst f¨ur die Datenvorbereitung zur
+%Erzeugung neuer Attribute beibehalten werden.
+
+\section{Vorbereitung der Daten}
+\subsection{Bereinigung der Daten}
+\subsection{Erstellung neuer Felder}
+Durch studieren der Felder konnten neue Felder entwickelt werden:  
+
+\end{document}
