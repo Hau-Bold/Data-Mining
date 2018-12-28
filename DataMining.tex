@@ -235,17 +235,34 @@ sich diese Vorgehensweise als unrentabel erweisen. (Einfluß des falsch positive
 \subsubsection{Erfolgskriterien}
 Es konnten drei zentrale Erfolgskriterien für das Projekt identifiziert werden:
 \begin{itemize}
-	\item Entscheidung ob ein Kunden einen Gutschein erhält
+	\item Entscheidung ob ein Kunde einen Gutschein erhält
 	\item Maximierung des Gewinns im Datensatz dmc2010 class.txt
-	\item Ab einem Gewinn von 9.310\euro im Testdatensatz und ? im class-Datensatz liegt ein erfolgreiches Datamining vor
+	\item Ab einem Gewinn von 9.310,50\euro\; im Testdatensatz und 8547,50\euro\; im class-Datensatz liegt ein erfolgreiches Datamining vor
 \end{itemize}
 
+\textbf{Bemerkung}:
+\par
+Zur Berechnung des Gewinnes (bzw. des Verlustes) wurde folgende Entscheidungsmatrix vorgeschrieben:
+\begin{center}
+\begin{tabular}{|c | c | c |}
+\hline
+ & Kein Wiederkäufer & Wiederkäufer
+\\
+\hline
+Kein Gutschein & 0 & 0
+\\
+\hline
+Gutschein & 1.5 & -5
+\\
+\hline
+\end{tabular}
+\end{center}
 Jeder Gutschein, der an eine Person ausgegeben wurde, die ansonsten nicht wieder bestellen
-würde, ergibt einen Gewinn von 1,50\euro für den Onlineshop. Jeder Kunde, der fälschlicherweise
-einen Gutschein bekommt, bedeutet einen Verlust in  Höhe des Wertes des Gutscheins, hier 5\euro.
+würde, ergibt einen Gewinn von 1,50\euro\; für den Onlineshop. Jeder Kunde der fälschlicherweise
+einen Gutschein bekommt, bedeutet einen Verlust in  Höhe des Wertes des Gutscheins, also 5\euro.
 
-Als Referenzwert für die Modellbildung wird folgende Situation
-zugrunde gelegt: Jedem Kunden wird ein Gutschein zugesand.Unter der Annahme, dass jeder dieser Kunden auch wieder eine Bestellung tätigt, erhält man im Testdatensatz (26377 Kunden haben keine Bestellung mehr innerhal)b von 90 Tagen getägt, 6051 aber schon) einen Verlust von
+Als Referenzwert\label{Referenzwerte} für die Modellbildung wird folgende Situation
+zugrunde gelegt: Jedem Kunden wird ein Gutschein zugesand.Unter der Annahme, dass jeder dieser Kunden auch wieder eine Bestellung tätigt, erhält man im Testdatensatz (26377 Kunden tätigten keine weitere Bestellung innerhalb von 90 Tagen, 6051 aber schon) einen Verlust von
 \begin{align*}
 (26377 *1.50 - 6051*5)\text{\euro} = 9310,50 \text{\euro}
 \end{align*}
@@ -255,12 +272,12 @@ Diese Werte müssen in der Modellbildung übertroffen werden.
 Für die Projektdurchführung wurde zu Projektbeginn der Aufwand in
 Wochen für die jeweiligen Projektschritte des CRISP-DM Modells geschätzt:
 \begin{itemize}
-	\item Geschäftsverständnis:
-	\item Datenverständnis:
-	\item Datenvorbereitung:
-	\item Modellbildung:
-	\item Evaluierung:
-	\item Bereitstellung:
+	\item Geschäftsverständnis: ca eine Woche
+	\item Datenverständnis: ca eine Woche
+	\item Datenvorbereitung: ca zweieinhalb Wochen
+	\item Modellbildung: ca zwei Wochen
+	\item Evaluierung: ca eine halbe Woche
+	\item Bereitstellung: ca eine halbe Woche
 \end{itemize}
 
 \section{Datenverständnis}
@@ -270,30 +287,54 @@ Beschreibung der einzelnen Attribute zugeliefert wurde, kann an dieser Stelle ei
 der Spalten erfolgen. Um versehentliche Korrelationen mit unwichtigen Daten im Ergebnis der
 Untersuchung zu vermeiden, sollten diese vor der Betrachtung aussortiert werden.
 
-\subsubsection{Erfolgsversprechnende Felder}
-Bewertet wurde die Datenqualität, die Datenplausibilität und der
-Vorteil, den die Daten für die Auswertung ergeben könnten. Das Feld "`datecreated"' kann in Verbindung
-mit dem Feld "`date"' dazu genutzt werden, um die Zeit zwischen der Accounterstellung
-und der ersten Bestellung zu berechnen. Daher werden beide Attribute beibehalten. Auch aus
-den Feldern "`cancel"', "`used"', "`delivpostcode"', "`invoicepostcode"', "`deliverydatepromised"' und "`deliverydatereal"'
-können zusammengesetzte Felder ermittelt werden.
-Zusätzlich sollten die Spalten "`gift"', "`voucher"' und "`newsletter"' für die Auswertung verwendet werden, da sie Aufschluss über das Kaufverhalten des Kunden geben: Durch das Feld
-"`newsletter"' kann beispielsweise erkannt werden, ob der Kunde generell über Interesse an den Produkten
-des Shops verfügt. Die Produktkategorien w0 - w10 können einen Vorteil für die Modellbildung
-bedeuten, allerdings haben sich diese in späteren Analyseschritten als wenig hilfreich für eine
-erfolgreiche Modellierung erwiesen und wurden daher in einem späteren Schritt aussortiert.
+
 
 \subsubsection{Vernachlässigbare Felder}
 Unwichtige Felder lassen sich anhand verschiedener Merkmale identifizieren. Bei einer
 auffallend schlechten Datenqualität sollte das Feld aussortiert werden(fehlende Einträge, Ausreisser).
 Außerdem existieren Felder, anhand deren Beschreibung bereits erkannt werden
-kann, dass diese keinen Einfluß auf das Ergebnis haben können. Als solche Felder wurden die folgenden identifiziert:
+kann, dass diese keinen Einfluß auf das Ergebnis haben können. Als solche Felder wurdendie im Folgenden beschriebenen identifiziert:
+\par
+\vspace{1cm}
+\begin{minipage}[h]{.5\textwidth}
 \begin{itemize}
 	\item "`salutation"'
-	\item "`title"'
 	\item "`domain"'
+	\item "`model"'
+	\item "`invoicepostcode"'
+	\item "`delivpostcode"'
 \end{itemize}
-E-mail domain, Anrede oder Titel eines Kunden haben sicher wenig bis gar keinen Einfluß auf das Kaufverhalten des Kunden.
+\end{minipage}
+\hfill
+\begin{minipage}[h]{.5\textwidth}
+\begin{itemize}
+  \item "`advertisingdatacode"'
+	\item "`points"'
+	\item "`shippingcosts"'
+	\item "`weight"'
+	\item "`used"'
+	\end{itemize}
+\end{minipage}
+\par
+\vspace{1cm}
+Die Anrede ("`salutation"') wurde zu Beginn als relevant eingestuft, in einem späteren Analyseschritt aber entfernt:
+Email-Domain oder Anrede  eines Kunden haben sicher wenig bis gar keinen Einfluß auf das Kaufverhalten des Kunden. Die Bedeutung des Feldes "`model"' konnte nicht schlüssig geklärt werden, daher wurde es auf Grund des vernachlässigbaren Prädikatoreinflusses entfernt.
+Die Rechnungsadresse ("`invoicepostcode"') und die Lieferadresse ("`delivpostcode"') wurden auch verworfen da hier keine Rückschlüsse auf das Kaufverhalten des Kunden erkennbar sind. Außerdem erwies sich die Datenqualität des Feldes "`invoicepostcode"' als schlecht wegen vieler NULL-Werte.
+Der Werbecode ( "`advertisingdatacode"') wurde auf Grund schlechter Datenqualität entfernt. Punkte eingelöst ("`points"') schien zunächst relevant, da es Aufschluss über die Empfänglichkeit des Kunden für Werbeaktionen gibt, erwies sich aber als nicht hilfreich und wurde in einem späteren Schritt auf Grund der der zu schlechtene Datenqualität entfernt. Spezifische Artikelinformation wir Versankosten ("`shippingcosts"') Gewicht ("`weight"') und Second Hand ("`used"') wurden auch entfernt, da sich hieraus keinerlei Information ableiten ließ.
+
+Zusätzlich wurden die Produktkategorien w0 - w10 gleich zu Beginn als uniteressant für die Modellbildung eingestuft.
+
+
+\subsubsection{Erfolgsversprechnende Felder}
+Bewertet wurde die Datenqualität, die Datenplausibilität und der
+Vorteil, den die Daten für die Auswertung ergeben könnten. Das Feld "`datecreated"' kann in Verbindung
+mit dem Feld "`date"' dazu genutzt werden, um die Zeit zwischen der Accounterstellung
+und der ersten Bestellung zu berechnen. Daher werden beide Attribute beibehalten. Auch aus
+den Feldern "`cancel"', "`deliverydatepromised"', "`deliverydatereal"'
+etc. können zusammengesetzte Felder ermittelt werden.
+Zusätzlich sollten die Spalten "`gift"', "`voucher"' und "`newsletter"' für die Auswertung verwendet werden, da sie Aufschluss über das Kaufverhalten des Kunden geben: Durch das Feld
+"`newsletter"' kann beispielsweise erkannt werden, ob der Kunde generell über Interesse an den Produkten
+des Shops verfügt. 
 
 \subsection{Datenbeschreibung}
 
@@ -312,12 +353,85 @@ und wie sich diese zusammensetzen. Weitere Daten sind indirekt enthalten und las
 \subsubsection{Konsistenz}
 Felder mit schlechter Datenqualität (fehlende Werte, NULL-Werte, viele Ausreisser,\ldots) sollten unter Verwendung eines Filters entfernt werden.
 Hierzu gehören die Felder "` points "`und "`advertisingdatacode"' (viele fehlende Werte), "`invoicepostcode"' und "`deliverydatereal"' (NULL-Werte).
-%Jedoch mussten diese beiden Felder zun¨achst f¨ur die Datenvorbereitung zur
-%Erzeugung neuer Attribute beibehalten werden.
+Jedoch mussten diese beiden Felder zunächst für die Datenvorbereitung zur Erzeugung neuer Attribute beibehalten werden.
 
 \section{Vorbereitung der Daten}
 \subsection{Bereinigung der Daten}
+Die Bereinigung der Daten erfolgte in zwei Schritten: {\color{red}{wie wurde aussortiert??}}
+\par
+Zunächst wurden alle NULL-Werte aussortiert und danach Extremwerte (Ausreißer).
 \subsection{Erstellung neuer Felder}
-Durch studieren der Felder konnten neue Felder entwickelt werden:  
+Durch studieren der Situation konnten neue Felder aus bestehenden Feldern gebildet werden:  
+\begin{framed}
+\begin{verbatim}
+diffPromReal = deliverydatepromised - deliverydatereal
+\end{verbatim}
+\end{framed}
+Differenz aus versprochenem und tatsächlichem Lieferdatum: Liegt das tatsächliche Lieferdatum nach dem versprochenen ist die Wahrscheinlichkeit recht groß den Kunden zu verlieren. 
+\begin{framed}
+\begin{verbatim}
+timeToFirstOrder = datecreated - date
+\end{verbatim}
+\end{framed}
+Zeitdauer zwischen Registrierung des Kunden und seiner ersten Bestellung.
+\begin{framed}
+\begin{verbatim}
+gotAdvertised = newsletter OR voucher
+\end{verbatim}
+\end{framed}
+Aufschluss ob Kunde an Werbemaßnahmen teilnimmt.
+\begin{framed}
+\begin{verbatim}
+giftOnlyBuyer = gift AND (numberitems == 1) 
+\end{verbatim}
+\end{framed}
+Aufschluss ob Kunde ein Geschenk bestellt hat.
+\begin{framed}
+\begin{verbatim}
+isRealGiftOnlyBuyer = (giftOnlyBuyer == 1) AND (date == datecreated)
+\end{verbatim}
+\end{framed}
+Aufschluss ob Kunde sich nur für die Bestellung eines Geschenks registriert hat.
+\begin{framed}
+\begin{verbatim}
+itemsKept = numberitems - remi - cancel 
+\end{verbatim}
+\end{framed}
+Aufschluss  über die Anzahl der Artikel die der Kunde bestelt und auch behalten hat.
+\subsection{Bewertung der Felder}
 
+{\color{red}{Umsetzung?}}
+\section{Modellierung}
+Als Grundlage für die Modellierung werden die unter ~\ref{Referenzwerte} ermittelten Referenzwerte verwendet. Ziel der Modellierung ist eine Maximierung des Gewinns, also ein Modell zu entwickeln, dessen Gewinn die berechneten Gewinne übertrifft.  
+\subsection{Wahl der Modellierungsknoten}
+Hinsichtlich der Struktur der Aufgabe kann man sich auf Baummodelle bei der Wahl der Knoten im SPSS Modeler beschränken. Hierfür wurden folgende Modellierungsknoten in Betracht gezogen:
+\begin{itemize}
+	\item Random-Trees
+	\item XRandom-Tree
+	\item CHAID
+	\item Tree-AS
+	\item C\&R-Tree
+\end{itemize} 
+Hinsichtlich der Validierung wurde zusätzlich überprüft, ob sich die getroffene Merkmalauswahl positiv auf den erzielten Gewinn auswirken konnte. Dabei konnte erkannt werden, welche Felder welchen Einfluß auf die Modellierung besitzen.
+\subsection{Test-Design}
+\subsubsection{Random-Trees}
+\subsubsection{XRandom-Tree}
+\subsubsection{CHAID}
+Der CHAID-Knoten generiert Entscheidungsbäume unter der Verwendung der $\chi^2$  - Verteilung.
+Im Gegensatz zum C\&R-Baum können mit diesem Modell auch Bäume mit mehr als zwei
+Verzweigungen generiert werden. Berücksichtigt wurde das Verhalten des Gewinnes unter Merkmalauswahl und Boosting. 
+
+\begin{center}
+\begin{tabular}{ c | c | c }
+ & Boosting & $\overline{\text{Boosting}}$
+\\
+\hline
+Merkwahlauswahl  &  8,548.50\euro & 8,575.00\euro
+\\
+$\overline{\text{Merkwahlauswahl}}$ & 8,697.00\euro  &  8,548.50\euro
+\\
+\end{tabular}
+\end{center}
+\subsubsection{Tree-AS}
+\subsubsection{C\&R-Tree}
 \end{document}
