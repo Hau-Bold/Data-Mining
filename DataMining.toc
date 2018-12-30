@@ -10,20 +10,20 @@
 \contentsline {section}{\numberline {2}Datenverst\IeC {\"a}ndnis}{4}{section.2}
 \contentsline {subsection}{\numberline {2.1}Datensammlung}{4}{subsection.2.1}
 \contentsline {subsubsection}{\numberline {2.1.1}Vernachl\IeC {\"a}ssigbare Felder}{4}{subsubsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}Erfolgsversprechnende Felder}{5}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.2}Erfolgsversprechende Felder}{5}{subsubsection.2.1.2}
 \contentsline {subsection}{\numberline {2.2}Datenbeschreibung}{5}{subsection.2.2}
 \contentsline {subsubsection}{\numberline {2.2.1}Datenmenge}{5}{subsubsection.2.2.1}
 \contentsline {subsubsection}{\numberline {2.2.2}Untersuchung der Daten}{5}{subsubsection.2.2.2}
 \contentsline {subsubsection}{\numberline {2.2.3}Konsistenz}{5}{subsubsection.2.2.3}
-\contentsline {section}{\numberline {3}Vorbereitung der Daten}{5}{section.3}
-\contentsline {subsection}{\numberline {3.1}Bereinigung der Daten}{5}{subsection.3.1}
+\contentsline {section}{\numberline {3}Vorbereitung der Daten}{6}{section.3}
+\contentsline {subsection}{\numberline {3.1}Bereinigung der Daten}{6}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Erstellung neuer Felder}{6}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Bewertung der Felder}{7}{subsection.3.3}
 \contentsline {section}{\numberline {4}Modellierung}{7}{section.4}
 \contentsline {subsection}{\numberline {4.1}Wahl der Modellierungsknoten}{7}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Test-Design}{7}{subsection.4.2}
-\contentsline {subsubsection}{\numberline {4.2.1}Random-Trees}{7}{subsubsection.4.2.1}
-\contentsline {subsubsection}{\numberline {4.2.2}XRandom-Tree}{7}{subsubsection.4.2.2}
-\contentsline {subsubsection}{\numberline {4.2.3}CHAID}{7}{subsubsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2}Test-Design}{8}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Random-Trees}{8}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}XRandom-Tree}{8}{subsubsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.3}CHAID}{8}{subsubsection.4.2.3}
 \contentsline {subsubsection}{\numberline {4.2.4}Tree-AS}{8}{subsubsection.4.2.4}
 \contentsline {subsubsection}{\numberline {4.2.5}C\&R-Tree}{8}{subsubsection.4.2.5}

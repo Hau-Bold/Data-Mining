@@ -209,10 +209,10 @@ Coburg, \today
 \pagebreak
 \section{Geschäftsverständnis}
 \subsection{Beschreibung der Situation}
-Das zu untersuchende System beschreibt einen Onlineshop dessen Produktpalette aus Medien wie z.B. CDs, Bücher, Hörbücher, ebooks und ebbok-readern besteht. Um gegenüber großen Online-Anbietern wettbewerbsfähig zu sein muß der Onlineshop regelmäßig Maßnahmen zur Aquise und Kundenbindung ergreifen. Eine Möglichkeit zur Kundenbindung besteht in einer Gutscheinausstellung. 
+Das zu untersuchende System beschreibt einen Onlineshop dessen Produktpalette aus Medien wie z.B. CDs, Bücher, Hörbücher, ebooks und ebook-Readern besteht. Um gegenüber großen Online-Anbietern wettbewerbsfähig zu sein muß der Onlineshop regelmäßig Maßnahmen zur Aquise und Kundenbindung ergreifen. Eine Möglichkeit zur Kundenbindung besteht in einer Gutscheinausstellung. 
 
 \subsubsection{Problembeschreibung}
-Viele Kunden tätigen meist nur eine Bestellung im Onlineshop. Es kann keine Vorhersage darüber getroffen werden ob ein Kunde eine weitere Bestellung tätigen oder das Interesse an den Produkten des Onlineshops verloren hat. Das Ziel dieser Arbeit besteht in der Bestimmung der Loyalität des einzelnen Kunden anhand von Merkmalen die sich aus den beigelegten Datensätzen erschließen lassen. Ist die Wahrscheinlichkeit sehr gering, dass ein Kunde einen weiteren Einkauf tätigt, erscheint es sinnvoll diesen mittels eines Gutscheins an den Onlineshop zu erinnern. Ist dagegen die Wahrscheinlicht eines erneuten Einkaufs eher hoch, so versucht die Zusendung eines Gutscheins nur unnötige Kosten.  
+Viele Kunden tätigen meist nur eine Bestellung im Onlineshop. Es kann keine Vorhersage darüber getroffen werden ob ein Kunde eine weitere Bestellung tätigen oder sein Interesse an den Produkten des Onlineshops erlischt. Das Ziel dieser Arbeit besteht in der Bestimmung der Loyalität des einzelnen Kunden anhand von Merkmalen die sich aus den beigelegten Datensätzen erschließen lassen. Ist die Wahrscheinlichkeit sehr gering, dass ein Kunde einen weiteren Einkauf tätigt, erscheint es sinnvoll diesen mittels eines Gutscheins an den Onlineshop zu erinnern. Ist dagegen die Wahrscheinlicht eines erneuten Einkaufs eher hoch, so verursacht die Zusendung eines Gutscheins nur unnötige Kosten.  
 \par
 Um dieses Problem zu lösen, soll mittels des CRISP-DM [IBM-Consortium, 2012] Modells
 und des Datamining-Tools SPSS von IBM eine Bewertung durchgeführt werden, welche die
@@ -224,12 +224,12 @@ Als Lösung wird eine Abbildung der Kundennummer auf das zu erwartende Kaufverha
 \subsubsection{Beschreibung der gelieferten Daten}
 Bei den zur Verfügung gestellten Daten  handelt es sich um Auszüge aus den Bestelldaten einer Kundendatenbank.
 Es gibt Spalten für das Datum einer Lieferung, Accounterstellung und der
-ersten Bestellung, Domain und Kundennumer des Kunden und eine Reihe von Flags, die das Kaufverhalten des Kunden beschreiben:
-Es wird registriert ob gebauchte oder importierte Artikel gekauft wurden, wie die Ware zum Kunden gelangt ist, wie der Kunde bezahlt hat, ob die Lieferung zurückgeschickt oder gecancelt wurde und wie viele Artikel der Kunde auf einmal gekauft hat.
+ersten Bestellung, Domain und Kundennummer des Kunden und eine Reihe von Flags, die das Kaufverhalten des Kunden beschreiben:
+Es wird registriert ob gebrauchte oder importierte Artikel gekauft wurden, wie die Ware zum Kunden gelangt ist, wie der Kunde bezahlt hat, ob die Lieferung zurückgeschickt oder gecancelt wurde und wie viele Artikel der Kunde auf einmal gekauft hat.
 
 \subsubsection{Risikofaktoren}
 
-Das Risiko des Onlineshops liegt in der Versendung zu vieler Gutscheine. Diese Gutscheine können dann auch Kunden erreichen, die auch ohne diese wieder eine Bestelltung getätigt hätten. In diesem Fall verliert der Shop pro Bestellung 5 \euro. Je nachdem, wie viele der Gutscheine zuviel ausgegeben werden, kann
+Das Risiko des Onlineshops liegt in der Versendung zu vieler Gutscheine. Diese Gutscheine können dann auch Kunden erreichen, die auch ohne diese wieder eine Bestellung getätigt hätten. In diesem Fall verliert der Shop pro Bestellung 5 \euro. Je nachdem, wie viele der Gutscheine unnötig ausgegeben werden, kann
 sich diese Vorgehensweise als unrentabel erweisen. (Einfluß des falsch positiven und des falsch negativen Fehlers bleiben unberücksichtig.)
 
 \subsubsection{Erfolgskriterien}
@@ -325,7 +325,7 @@ Der Werbecode ( "`advertisingdatacode"') wurde auf Grund schlechter Datenqualit�
 Zusätzlich wurden die Produktkategorien w0 - w10 gleich zu Beginn als uniteressant für die Modellbildung eingestuft.
 
 
-\subsubsection{Erfolgsversprechnende Felder}
+\subsubsection{Erfolgsversprechende Felder}
 Bewertet wurde die Datenqualität, die Datenplausibilität und der
 Vorteil, den die Daten für die Auswertung ergeben könnten. Das Feld "`datecreated"' kann in Verbindung
 mit dem Feld "`date"' dazu genutzt werden, um die Zeit zwischen der Accounterstellung
@@ -360,6 +360,11 @@ Jedoch mussten diese beiden Felder zunächst für die Datenvorbereitung zur Erze
 Die Bereinigung der Daten erfolgte in zwei Schritten: {\color{red}{wie wurde aussortiert??}}
 \par
 Zunächst wurden alle NULL-Werte aussortiert und danach Extremwerte (Ausreißer).
+Die Wertemenge einiger Felder enthielt viele NULL-Werte welche bei der späteren Modellierung hinderlich sein könnten.
+Entsprechend wurden diese Werte (z.B bei "`deliverydatereal"' und "`deliverydatepromised"') mit einem Auswahl-Knoten des SPSS Modelers entfernt, 
+was eine deutliche Reduzierung der Datenmenge nach sich zog: Etwa 7000 Datensätze  wurden entfernt.
+Unrealistische Werte wurden ebenfalls mit dem Auswahl-Knoten entfernt.
+
 \subsection{Erstellung neuer Felder}
 Durch studieren der Situation konnten neue Felder aus bestehenden Feldern gebildet werden:  
 \begin{framed}
@@ -400,7 +405,31 @@ itemsKept = numberitems - remi - cancel
 Aufschluss  über die Anzahl der Artikel die der Kunde bestelt und auch behalten hat.
 \subsection{Bewertung der Felder}
 
-{\color{red}{Umsetzung?}}
+Nachdem neue Felder erstellt wurden, muss der Einfluss dieser auf die Modellierung bewertet werden.
+Hierfür wurde nach der Datenvorbereitung  ein Knoten zur Merkmalauswahl angefügt.
+
+Dabei ergab sich, dass 10 der 19 Felder als bedeutsam (100 \%) eingestuft wurden, ein weiteres Feld besaß eine Korrelation von über 90 \%,
+die restlichen wurden als unbedeutsam (Korrelation von unter 90\%) eingestuft.
+Korrelationswerte sollten lediglich als Richtlinie betrachtet werden, da die Gewichtung
+vieler Attribute bei 100\% lag.  Unter den 10 bedeutsamen Feldern befanden sich auch einige der
+generierten:
+
+\vspace{0.2cm}
+\par
+	\begin{minipage}[h]{.5\textwidth}
+	\begin{center}
+	"`itemsKept"'
+	\end{center}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[h]{.5\textwidth}
+	\begin{center}
+	"`gotAdvertised"'
+	\end{center}
+	\end{minipage}
+	\vspace{0.2cm}
+\par
+Damit stehen für die Modellierung zehn Felder zu Verfügung.
 \section{Modellierung}
 Als Grundlage für die Modellierung werden die unter ~\ref{Referenzwerte} ermittelten Referenzwerte verwendet. Ziel der Modellierung ist eine Maximierung des Gewinns, also ein Modell zu entwickeln, dessen Gewinn die berechneten Gewinne übertrifft.  
 \subsection{Wahl der Modellierungsknoten}
@@ -415,6 +444,14 @@ Hinsichtlich der Struktur der Aufgabe kann man sich auf Baummodelle bei der Wahl
 Hinsichtlich der Validierung wurde zusätzlich überprüft, ob sich die getroffene Merkmalauswahl positiv auf den erzielten Gewinn auswirken konnte. Dabei konnte erkannt werden, welche Felder welchen Einfluß auf die Modellierung besitzen.
 \subsection{Test-Design}
 \subsubsection{Random-Trees}
+Dieser Knoten erwies sich als bester Moellierungsknoten.
+ Der Algorithmus entwickelt ein Modell, welches sich aus verschiedenen Entscheidungsbäumen zusammensetzt.
+ Random Trees entspricht in der grundlegenden Vorghensweise der des C\&R-Baums, erweitert
+diesen jedoch um zwei Punkte: Zum einen wird in diesem Modell Bagging verwendet, um
+ein Overfitting des Datensatzes zu vermeiden. Zum anderen wird für jede Aufteilung des Baums
+lediglich eine Stichprobe der Input-Werte zur Errechnung der Unreinheit benutzt. [IBM, 2016,
+S.104] Mittels diesem Modells konnten auf dem Trainingsdatensatz 11.495 e Gewinn erreicht
+werden.
 \subsubsection{XRandom-Tree}
 \subsubsection{CHAID}
 Der CHAID-Knoten generiert Entscheidungsbäume unter der Verwendung der $\chi^2$  - Verteilung.
@@ -434,4 +471,21 @@ $\overline{\text{Merkwahlauswahl}}$ & 8,697.00\euro  &  8,548.50\euro
 \end{center}
 \subsubsection{Tree-AS}
 \subsubsection{C\&R-Tree}
+
+\newpage
+\begin{titlepage}
+\section*{Erklärung:}
+\noindent {\large Die vorliegende Projektarbeit wurde am Institut für Informatik  der Hochschule Coburg nach einem Thema von Herrn Dr.~Detlef~Bittner erstellt.
+\newline Hiermit versichere ich, dass ich diese Arbeit selbstständig angefertigt und dazu nur die angegebenen Quellen verwendet habe.
+
+\vspace{1.5cm}
+
+\noindent Coburg, den \today
+
+\vspace{0.5cm}
+
+\raggedleft Michael Krasser\quad\quad \par}
+
+\vfill
+\end{titlepage}
 \end{document}
