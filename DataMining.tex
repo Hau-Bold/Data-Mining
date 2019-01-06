@@ -214,7 +214,7 @@ Das zu untersuchende System beschreibt einen Onlineshop dessen Produktpalette au
 \subsubsection{Problembeschreibung}
 Viele Kunden tätigen meist nur eine Bestellung im Onlineshop. Es kann keine Vorhersage darüber getroffen werden ob ein Kunde eine weitere Bestellung tätigen oder sein Interesse an den Produkten des Onlineshops erlischt. Das Ziel dieser Arbeit besteht in der Bestimmung der Loyalität des einzelnen Kunden anhand von Merkmalen die sich aus den beigelegten Datensätzen erschließen lassen. Ist die Wahrscheinlichkeit sehr gering, dass ein Kunde einen weiteren Einkauf tätigt, erscheint es sinnvoll diesen mittels eines Gutscheins an den Onlineshop zu erinnern. Ist dagegen die Wahrscheinlicht eines erneuten Einkaufs eher hoch, so verursacht die Zusendung eines Gutscheins nur unnötige Kosten.  
 \par
-Um dieses Problem zu lösen, soll mittels des CRISP-DM [IBM-Consortium, 2012] Modells
+Um dieses Problem zu lösen, soll mittels des CRISP-DM Modells \cite{crisp}
 und des Datamining-Tools SPSS von IBM eine Bewertung durchgeführt werden, welche die
 Loyalität des Kunden bestimmen soll. Hierfür wurden zwei *.txt-Dateien über Kundendaten geliefert.
 Als Lösung wird eine Abbildung der Kundennummer auf das zu erwartende Kaufverhalten gefordert. 
@@ -258,13 +258,13 @@ Gutschein & 1.5 & -5
 \end{tabular}
 \end{center}
 Jeder Gutschein, der an eine Person ausgegeben wurde, die ansonsten nicht wieder bestellen
-würde, ergibt einen Gewinn von 1,50\euro\; für den Onlineshop. Jeder Kunde der fälschlicherweise
-einen Gutschein bekommt, bedeutet einen Verlust in  Höhe des Wertes des Gutscheins, also 5\euro.
+würde, ergibt einen Gewinn von 1,50 \euro\; für den Onlineshop. Jeder Kunde der fälschlicherweise
+einen Gutschein bekommt, bedeutet einen Verlust in  Höhe des Wertes des Gutscheins, also 5 \euro.
 
 Als Referenzwert\label{Referenzwerte} für die Modellbildung wird folgende Situation
 zugrunde gelegt: Jedem Kunden wird ein Gutschein zugesand.Unter der Annahme, dass jeder dieser Kunden auch wieder eine Bestellung tätigt, erhält man im Testdatensatz (26377 Kunden tätigten keine weitere Bestellung innerhalb von 90 Tagen, 6051 aber schon) einen Verlust von
 \begin{align*}
-(26377 *1.50 - 6051*5)\text{\euro} = 9310,50 \text{\euro}
+(26377 *1.50 - 6051*5)\;\text{\euro} = 9310,50\;\text{\euro}
 \end{align*}
 Diese Werte müssen in der Modellbildung übertroffen werden.
 
@@ -357,7 +357,7 @@ Jedoch mussten diese beiden Felder zunächst für die Datenvorbereitung zur Erze
 
 \section{Vorbereitung der Daten}
 \subsection{Bereinigung der Daten}
-Die Bereinigung der Daten erfolgte in zwei Schritten: {\color{red}{wie wurde aussortiert??}}
+Die Bereinigung der Daten erfolgte in zwei Schritten: 
 \par
 Zunächst wurden alle NULL-Werte aussortiert und danach Extremwerte (Ausreißer).
 Die Wertemenge einiger Felder enthielt viele NULL-Werte welche bei der späteren Modellierung hinderlich sein könnten.
@@ -366,6 +366,13 @@ was eine deutliche Reduzierung der Datenmenge nach sich zog: Etwa 7000 Datensät
 Unrealistische Werte wurden ebenfalls mit dem Auswahl-Knoten entfernt.
 
 \subsection{Erstellung neuer Felder}
+\begin{figure}[h]
+	    \centering
+				     \includegraphics[width=\textwidth]{Datenvorbereitung.png}
+						\captionof{figure}{Filtertyp 8 - AVERAGE$\_$7}
+\end{figure}
+
+
 Durch studieren der Situation konnten neue Felder aus bestehenden Feldern gebildet werden:  
 \begin{framed}
 \begin{verbatim}
@@ -402,7 +409,10 @@ Aufschluss ob Kunde sich nur für die Bestellung eines Geschenks registriert hat
 itemsKept = numberitems - remi - cancel 
 \end{verbatim}
 \end{framed}
-Aufschluss  über die Anzahl der Artikel die der Kunde bestelt und auch behalten hat.
+Aufschluss  über die Anzahl der Artikel die der Kunde bestellt und auch behalten hat.
+
+
+
 \subsection{Bewertung der Felder}
 
 Nachdem neue Felder erstellt wurden, muss der Einfluss dieser auf die Modellierung bewertet werden.
@@ -441,6 +451,10 @@ Hinsichtlich der Struktur der Aufgabe kann man sich auf Baummodelle bei der Wahl
 	\item Tree-AS
 	\item C\&R-Tree
 \end{itemize} 
+
+Anfänglich  wurden alle von SPSS Modeler zu Verfügung gestellten Moellierungsknoten in Betracht gezogen, aber nicht alle lieferten brauchbare
+Ergebnisse: Die Support Vector Machine (SVM) lieferte viele NULL-Werte.
+\par
 Hinsichtlich der Validierung wurde zusätzlich überprüft, ob sich die getroffene Merkmalauswahl positiv auf den erzielten Gewinn auswirken konnte. Dabei konnte erkannt werden, welche Felder welchen Einfluß auf die Modellierung besitzen.
 \subsection{Test-Design}
 \subsubsection{Random-Trees}
@@ -463,14 +477,29 @@ Verzweigungen generiert werden. Berücksichtigt wurde das Verhalten des Gewinnes
  & Boosting & $\overline{\text{Boosting}}$
 \\
 \hline
-Merkwahlauswahl  &  8,548.50\euro & 8,575.00\euro
+Merkwahlauswahl  &  8,548.50\;\euro & 8,575.00\;\euro
 \\
-$\overline{\text{Merkwahlauswahl}}$ & 8,697.00\euro  &  8,548.50\euro
+$\overline{\text{Merkwahlauswahl}}$ & 8,697.00\;\euro  &  8,548.50\;\euro
 \\
 \end{tabular}
 \end{center}
 \subsubsection{Tree-AS}
 \subsubsection{C\&R-Tree}
+
+%Abbildungsverzeichnis
+\newpage
+\section{Abbildungsverzeichnis}
+\listoffigures
+\newpage
+
+\newpage
+\section{Literaturverzeichnis}
+\thispagestyle{plain}
+\begin{thebibliography}{DiplRS}
+\bibitem[1]{crisp} {\it CRISP-DM: Ein Standard-Prozess-Modell für Data Mining} \url{ https://statistik-dresden.de/archives/1128}.
+\bibitem[2]{nodes} {\it IBM SPSS Modeler 18.1 Modeling Nodes} 
+\url{ftp://public.dhe.ibm.com/software/analytics/spss/documentation/modeler/18.1.1/en/ModelerModelingNodes.pdf}
+\end{thebibliography}
 
 \newpage
 \begin{titlepage}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.11.7)  30 DEC 2018 14:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.11.7)  6 JAN 2019 12:00
 entering extended mode
 **./DataMining.tex
 (DataMining.tex
@@ -1156,7 +1156,7 @@ Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
 (lastpage)             ! on input line 161.
 
-<Logo.png, id=118, 2007.5pt x 378.41376pt>
+<Logo.png, id=126, 2007.5pt x 378.41376pt>
 File: Logo.png Graphic file (type png)
  <use Logo.png>
 Package pdftex.def Info: Logo.png used on input line 178.
@@ -1326,77 +1326,83 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 368.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 368.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 371.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
+ <Datenvorbereitung.png, id=198, 507.39563pt x 75.28125pt>
+File: Datenvorbereitung.png Graphic file (type png)
+ <use Datenvorbereitung.png>
+Package pdftex.def Info: Datenvorbereitung.png used on input line 371.
+(pdftex.def)             Requested size: 455.24408pt x 67.54572pt.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 378.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 394.
+(babel)             in language  on input line 395.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 394.
+(babel)             in language  on input line 395.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 394.
+(babel)             in language  on input line 395.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 394.
- [6]
+(babel)             in language  on input line 395.
+ [6 <./Datenvorbereitung.png>]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 406.
+(babel)             in language  on input line 416.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 406.
+(babel)             in language  on input line 416.
 
-Overfull \hbox (2.61049pt too wide) in paragraph at lines 419--431
+Overfull \hbox (2.61049pt too wide) in paragraph at lines 429--441
 []$[]$  $[]$
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 433.
+(babel)             in language  on input line 443.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 433.
+(babel)             in language  on input line 443.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 435.
+(babel)             in language  on input line 445.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 435.
+(babel)             in language  on input line 445.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 441.
+(babel)             in language  on input line 447.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 441.
+(babel)             in language  on input line 447.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 441.
+(babel)             in language  on input line 447.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 441.
+(babel)             in language  on input line 447.
 [7]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 445.
+(babel)             in language  on input line 459.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 445.
+(babel)             in language  on input line 459.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 446.
+(babel)             in language  on input line 460.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 446.
+(babel)             in language  on input line 460.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 455.
+(babel)             in language  on input line 469.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 455.
+(babel)             in language  on input line 469.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 456.
+(babel)             in language  on input line 470.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 456.
+(babel)             in language  on input line 470.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 472.
+(babel)             in language  on input line 486.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 472.
+(babel)             in language  on input line 486.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 473.
+(babel)             in language  on input line 487.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 473.
+(babel)             in language  on input line 487.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 475.
+(babel)             in language  on input line 490.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 475.
+(babel)             in language  on input line 490.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 475.
+(babel)             in language  on input line 490.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 475.
+(babel)             in language  on input line 490.
  [8]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 490.
@@ -1406,54 +1412,109 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 490.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 490.
+ [9]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 491.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 491.
+ (DataMining.lof)
+\tf@lof=\write7
+\openout7 = `DataMining.lof'.
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 493.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 493.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 493.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 493.
+ [10]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 496.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 496.
+
+Underfull \hbox (badness 10000) in paragraph at lines 499--500
+[]\T1/cmr/m/it/12 CRISP-DM: Ein Standard-Prozess-Modell für Da-ta Mi-ning []$\T1/cmtt/m/n/12 https :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 500--502
+[]\T1/cmr/m/it/12 IBM SPSS Mo-de-ler 18.1 Mo-de-ling No-des []$\T1/cmtt/m/n/12 ftp : / / public . dhe . ibm .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 500--502
+\T1/cmtt/m/n/12 com / software / analytics / spss / documentation / modeler / 18 . 1 . 1 / en /
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 504.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 504.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 504.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 504.
+[11]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 519.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 519.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 519.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 519.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.490 \end{titlepage}
+l.519 \end{titlepage}
                       [1]
-\Changes@OutFile=\write7
-\openout7 = `DataMining.soc'.
+\Changes@OutFile=\write8
+\openout8 = `DataMining.soc'.
 
-\tf@thm=\write8
-\openout8 = `DataMining.thm'.
+\tf@thm=\write9
+\openout9 = `DataMining.thm'.
 
  
 AED: lastpage setting LastPage
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 492.
+(babel)             in language  on input line 520.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 492.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 492.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 492.
+(babel)             in language  on input line 520.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 520.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 520.
 (DataMining.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 492.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 492.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 520.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 520.
 Package rerunfilecheck Info: File `DataMining.out' has not changed.
-(rerunfilecheck)             Checksum: 6A27985FFBDD98F4F834DF60B66D2465;2000.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 492.
+(rerunfilecheck)             Checksum: BD4337016D14876E8FE780AC2F2B8C82;2115.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 520.
  ) 
 Here is how much of TeX's memory you used:
- 19637 strings out of 493323
- 349665 string characters out of 3139060
- 447177 words of memory out of 3000000
- 22685 multiletter control sequences out of 15000+200000
- 19130 words of font info for 50 fonts, out of 3000000 for 9000
+ 19663 strings out of 493323
+ 349985 string characters out of 3139060
+ 447231 words of memory out of 3000000
+ 22696 multiletter control sequences out of 15000+200000
+ 19814 words of font info for 51 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,11n,65p,724b,411s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Haubold\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk> <C:\Users\Haubold\AppData\
-Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk> <C:\Users\Haubold\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
-our\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Haubold\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx17
-28.pk> <C:\Users\Haubold\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\Haubold\AppD
-ata\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsl1200.pk> <C:\Users\Haubold\AppData\Local\MiKTeX\2.9\fonts\pk
-\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Haubold\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ec
-bx2488.pk> <C:\Users\Haubold\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm2074.pk> <C:\Users\Haubold\
-AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2074.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/eurosym/feymr10.pfb>
-Output written on DataMining.pdf (10 pages, 271712 bytes).
+Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\Haubold\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
+our\jknappen\ec\dpi600\ectt1200.pk> <C:\Users\Haubold\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx14
+40.pk> <C:\Users\Haubold\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\Haubold\AppD
+ata\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\Haubold\AppData\Local\MiKTeX\2.9\fonts\pk
+\ljfour\jknappen\ec\dpi600\ecsl1200.pk> <C:\Users\Haubold\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ec
+bx1200.pk> <C:\Users\Haubold\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\Haubold\
+AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm2074.pk> <C:\Users\Haubold\AppData\Local\MiKTeX\2.9\font
+s\pk\ljfour\jknappen\ec\dpi600\ecbx2074.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/eurosym/feymr10.pfb>
+Output written on DataMining.pdf (13 pages, 303817 bytes).
 PDF statistics:
- 642 PDF objects out of 1000 (max. 8388607)
- 39 named destinations out of 1000 (max. 500000)
- 242 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 728 PDF objects out of 1000 (max. 8388607)
+ 49 named destinations out of 1000 (max. 500000)
+ 263 words of extra memory for PDF output out of 10000 (max. 10000000)
 
