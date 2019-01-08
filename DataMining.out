@@ -21,10 +21,11 @@
 \BOOKMARK [1][-]{section.4}{Modellierung}{}% 21
 \BOOKMARK [2][-]{subsection.4.1}{Wahl der Modellierungsknoten}{section.4}% 22
 \BOOKMARK [2][-]{subsection.4.2}{Test-Design}{section.4}% 23
-\BOOKMARK [3][-]{subsubsection.4.2.1}{Random-Trees}{subsection.4.2}% 24
-\BOOKMARK [3][-]{subsubsection.4.2.2}{XRandom-Tree}{subsection.4.2}% 25
-\BOOKMARK [3][-]{subsubsection.4.2.3}{CHAID}{subsection.4.2}% 26
-\BOOKMARK [3][-]{subsubsection.4.2.4}{Tree-AS}{subsection.4.2}% 27
-\BOOKMARK [3][-]{subsubsection.4.2.5}{C\046R-Tree}{subsection.4.2}% 28
-\BOOKMARK [1][-]{section.5}{Abbildungsverzeichnis}{}% 29
-\BOOKMARK [1][-]{section.6}{Literaturverzeichnis}{}% 30
+\BOOKMARK [3][-]{subsubsection.4.2.1}{CHAID}{subsection.4.2}% 24
+\BOOKMARK [3][-]{subsubsection.4.2.2}{C5.0}{subsection.4.2}% 25
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Random-Trees}{subsection.4.2}% 26
+\BOOKMARK [3][-]{subsubsection.4.2.4}{XGBoost-Baum}{subsection.4.2}% 27
+\BOOKMARK [3][-]{subsubsection.4.2.5}{Tree-AS}{subsection.4.2}% 28
+\BOOKMARK [3][-]{subsubsection.4.2.6}{C\046R-Tree}{subsection.4.2}% 29
+\BOOKMARK [1][-]{section.5}{Abbildungsverzeichnis}{}% 30
+\BOOKMARK [1][-]{section.6}{Literaturverzeichnis}{}% 31
