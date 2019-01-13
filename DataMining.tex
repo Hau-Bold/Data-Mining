@@ -217,8 +217,9 @@ Viele Kunden tätigen meist nur eine Bestellung im Onlineshop. Es kann keine Vor
 Um dieses Problem zu lösen, soll mittels des CRISP-DM Modells \cite{crisp}
 und des Datamining-Tools SPSS von IBM eine Bewertung durchgeführt werden, welche die
 Loyalität des Kunden bestimmen soll. Hierfür wurden zwei *.txt-Dateien über Kundendaten geliefert.
-Als Lösung wird eine Abbildung der Kundennummer auf das zu erwartende Kaufverhalten gefordert.  
+Als Lösung wird eine Abbildung der Kundennummer auf das zu erwartende Kaufverhalten gefordert. 
 
+Der abschließenden Vergleich kann über den Realdatzensatz Datei dmc2010$\_$real.txt geführt werden, welcher das reale Kaufverhalten dokumentiert.
 \subsection{Situationsbewertung}
 
 \subsubsection{Beschreibung der gelieferten Daten}
@@ -230,60 +231,59 @@ Es wird registriert ob gebrauchte oder importierte Artikel gekauft wurden, wie d
 \subsubsection{Risikofaktoren}
 
 Das Risiko des Onlineshops liegt in der Versendung zu vieler Gutscheine. Diese Gutscheine können dann auch Kunden erreichen, die auch ohne diese wieder eine Bestellung getätigt hätten. In diesem Fall verliert der Shop pro Bestellung 5 \euro. Je nachdem, wie viele der Gutscheine unnötig ausgegeben werden, kann
-sich diese Vorgehensweise als unrentabel erweisen. (Einfluß des falsch positiven und des falsch negativen Fehlers bleiben unberücksichtig.)
+sich diese Vorgehensweise als unrentabel erweisen. (Einfluß des falsch positiven und des falsch negativen Fehlers bleiben unberücksichtigt.)
 
 \subsubsection{Erfolgskriterien}
 Es konnten drei zentrale Erfolgskriterien für das Projekt identifiziert werden:
 \begin{itemize}
 	\item Entscheidung ob ein Kunde einen Gutschein erhält
 	\item Maximierung des Gewinns im Datensatz dmc2010 class.txt
-	\item Ab einem Gewinn von 9.310,50\euro\; im Testdatensatz und 8547,50\euro\; im class-Datensatz liegt ein erfolgreiches Datamining vor
+	\item Ab einem Gewinn von 9.310,50\euro\; im Testdatensatz und 8547,50\euro\; im class-Datensatz\footnote{Dieser Werte wird ebenfalls mit Gl.$(\ref{gl1})$  aus dmc2010$\_$real.txt ermittelt.} liegt ein erfolgreiches Datamining vor
 \end{itemize}
 
 \textbf{Bemerkung}:
 \par
 Zur Berechnung des Gewinnes (bzw. des Verlustes) wurde folgende Entscheidungsmatrix vorgeschrieben:
+
+\begin{table}[h]
 \begin{center}
-\begin{tabular}{|c | c | c |}
-\hline
- & Kein Wiederkäufer & Wiederkäufer
-\\
-\hline
-Kein Gutschein & 0 & 0
+\begin{tabular}{c | c | c }
+ &$\overline{\text{Wiederkäufer}}$\footnotemark & Wiederkäufer
 \\
 \hline
 Gutschein & 1.5 & -5
 \\
-\hline
+$\overline{\text{Gutschein}}$ & 0 & 0
 \end{tabular}
+\caption{Zugelieferte Entscheidungsmatrix}
 \end{center}
-Jeder Gutschein, der an eine Person ausgegeben wurde, die ansonsten nicht wieder bestellen
-würde, ergibt einen Gewinn von 1,50 \euro\; für den Onlineshop. Jeder Kunde der fälschlicherweise
-einen Gutschein bekommt, bedeutet einen Verlust in  Höhe des Wertes des Gutscheins, also 5 \euro.
+\end{table}
+\footnotetext{Das überstrichene Symbol ist hier und im folgenden als mathematisches Komplement zu verstehen.}
+Ein an eine Person, die von alleine nicht wieder bestellt, ausgegebener Gutschein bedeutet für den Onlineshop einen Gewinn von 1,50 \euro\;. Jeder Kunde der fälschlicherweise
+einen Gutschein bekommt, ergibt einen Verlust in  Höhe des Wertes des Gutscheins, also 5 \euro.
 
 Als Referenzwert\label{Referenzwerte} für die Modellbildung wird folgende Situation
-zugrunde gelegt: Jedem Kunden wird ein Gutschein zugesand.Unter der Annahme, dass jeder dieser Kunden auch wieder eine Bestellung tätigt, erhält man im Testdatensatz (26377 Kunden tätigten keine weitere Bestellung innerhalb von 90 Tagen, 6051 aber schon) einen Verlust von
-\begin{align*}
-(26377 *1.50 - 6051*5)\;\text{\euro} = 9310,50\;\text{\euro}
-\end{align*}
+zugrunde gelegt: Jeder Kunde erhält einen Gutschein. Unter der Annahme, dass jeder dieser Kunden auch wieder eine Bestellung tätigt, erhält man im Testdatensatz (26377 Kunden tätigten keine weitere Bestellung innerhalb von 90 Tagen, 6051 aber schon) einen Verlust von
+\begin{align}
+(26377 *1.50 - 6051*5)\;\text{\euro} = 9310,50\;\text{\euro}\label{gl1}
+\end{align}
 Diese Werte müssen in der Modellbildung übertroffen werden.
 
 \subsection{Projektplanung}
 Für die Projektdurchführung wurde zu Projektbeginn der Aufwand in
 Wochen für die jeweiligen Projektschritte des CRISP-DM Modells geschätzt:
 \begin{itemize}
-	\item Geschäftsverständnis: ca eine Woche
-	\item Datenverständnis: ca eine Woche
-	\item Datenvorbereitung: ca zweieinhalb Wochen
-	\item Modellbildung: ca zwei Wochen
-	\item Evaluierung: ca eine halbe Woche
-	\item Bereitstellung: ca eine halbe Woche
+	\item Geschäftsverständnis: ca zwei Wochen
+	\item Datenverständnis: ca zwei Wochen
+	\item Datenvorbereitung: ca zwei Wochen
+	\item Modellbildung: ca eineinhalb Wochen
+	\item Evaluierung und Bereitstellung: ca eine halbe Woche
 \end{itemize}
 
 \section{Datenverständnis}
 \subsection{Datensammlung}
-Einige Attribute des Datensatzes sind weniger erfolgsversprechend als andere. Da bereits eine
-Beschreibung der einzelnen Attribute zugeliefert wurde, kann an dieser Stelle eine Vorsortierung
+Einige Feler des Datensatzes sind weniger erfolgsversprechend als andere. Da bereits eine
+Beschreibung der einzelnen Felder zugeliefert wurde, kann an dieser Stelle eine Vorsortierung
 der Spalten erfolgen. Um versehentliche Korrelationen mit unwichtigen Daten im Ergebnis der
 Untersuchung zu vermeiden, sollten diese vor der Betrachtung aussortiert werden.
 
@@ -291,9 +291,9 @@ Untersuchung zu vermeiden, sollten diese vor der Betrachtung aussortiert werden.
 
 \subsubsection{Vernachlässigbare Felder}
 Unwichtige Felder lassen sich anhand verschiedener Merkmale identifizieren. Bei einer
-auffallend schlechten Datenqualität sollte das Feld aussortiert werden(fehlende Einträge, Ausreisser).
+auffallend schlechten Datenqualität sollte das Feld aussortiert\footnote{Die Entfernung erfolgte mittels eines Typ-Knotens im SPSS Modeler.} werden(fehlende Einträge, Ausreisser).
 Außerdem existieren Felder, anhand deren Beschreibung bereits erkannt werden
-kann, dass diese keinen Einfluß auf das Ergebnis haben können. Als solche Felder wurdendie im Folgenden beschriebenen identifiziert:
+kann, dass diese keinen Einfluß auf das Ergebnis haben können. Als solche Felder wurden die im folgenden beschriebenen identifiziert:
 \par
 \vspace{1cm}
 \begin{minipage}[h]{.5\textwidth}
@@ -320,7 +320,7 @@ kann, dass diese keinen Einfluß auf das Ergebnis haben können. Als solche Feld
 Die Anrede ("`salutation"') wurde zu Beginn als relevant eingestuft, in einem späteren Analyseschritt aber entfernt:
 Email-Domain oder Anrede  eines Kunden haben sicher wenig bis gar keinen Einfluß auf das Kaufverhalten des Kunden. Die Bedeutung des Feldes "`model"' konnte nicht schlüssig geklärt werden, daher wurde es auf Grund des vernachlässigbaren Prädikatoreinflusses entfernt.
 Die Rechnungsadresse ("`invoicepostcode"') und die Lieferadresse ("`delivpostcode"') wurden auch verworfen da hier keine Rückschlüsse auf das Kaufverhalten des Kunden erkennbar sind. Außerdem erwies sich die Datenqualität des Feldes "`invoicepostcode"' als schlecht wegen vieler NULL-Werte.
-Der Werbecode ( "`advertisingdatacode"') wurde auf Grund schlechter Datenqualität entfernt. Punkte eingelöst ("`points"') schien zunächst relevant, da es Aufschluss über die Empfänglichkeit des Kunden für Werbeaktionen gibt, erwies sich aber als nicht hilfreich und wurde in einem späteren Schritt auf Grund der der zu schlechtene Datenqualität entfernt. Spezifische Artikelinformation wir Versankosten ("`shippingcosts"') Gewicht ("`weight"') und Second Hand ("`used"') wurden auch entfernt, da sich hieraus keinerlei Information ableiten ließ.
+Der Werbecode ( "`advertisingdatacode"') wurde auf Grund schlechter Datenqualität entfernt. Punkte eingelöst ("`points"') schien zunächst relevant, da es Aufschluss über die Empfänglichkeit des Kunden für Werbeaktionen gibt, erwies sich aber als nicht hilfreich und wurde in einem späteren Schritt auf Grund der der zu schlechtene Datenqualität entfernt. Spezifische Artikelinformation wie Versandkosten ("`shippingcosts"') Gewicht ("`weight"') und Second Hand ("`used"') wurden auch entfernt, da sich hieraus keinerlei Information ableiten ließ.
 
 Zusätzlich wurden die Produktkategorien w0 - w10 gleich zu Beginn als uniteressant für die Modellbildung eingestuft.
 
@@ -373,7 +373,7 @@ Unrealistische Werte wurden ebenfalls mit dem Auswahl-Knoten entfernt.
 \end{figure}
 
 
-Durch studieren der Situation konnten neue Felder aus bestehenden Feldern gebildet werden:  
+Durch studieren der Situation konnten neue Felder aus bestehenden Feldern gebildet\footnote{Der Ableiten-Knotens des SPSS Modelers bietet die Möglichkeit neue Felder mittels minimaler Programmierung zu erstellen.} werden:  
 \begin{framed}
 \begin{verbatim}
 diffPromReal = deliverydatepromised - deliverydatereal
@@ -412,7 +412,7 @@ itemsKept = numberitems - remi - cancel
 Aufschluss  über die Anzahl der Artikel die der Kunde bestellt und auch behalten hat.
 
 
-
+\newpage
 \subsection{Bewertung der Felder}
 
 Nachdem neue Felder erstellt wurden, muss der Einfluss dieser auf die Modellierung bewertet werden.
@@ -439,7 +439,12 @@ generierten:
 	\end{minipage}
 	\vspace{0.2cm}
 \par
-Damit stehen für die Modellierung zehn Felder zu Verfügung.
+Damit stehen für die Modellierung zehn Felder zu Verfügung:
+\begin{center}
+\includegraphics[width=\textwidth]{Screens/Merkmalauswahl}
+\captionof{figure}{Merkmalauswahl}
+\end{center}
+
 \section{Modellierung}
 Als Grundlage für die Modellierung werden die unter ~\ref{Referenzwerte} ermittelten Referenzwerte verwendet. Ziel der Modellierung ist eine Maximierung des Gewinns, also ein Modell zu entwickeln, dessen Gewinn die berechneten Gewinne übertrifft.  
 \subsection{Wahl der Modellierungsknoten}
@@ -450,11 +455,9 @@ Hinsichtlich der Struktur der Aufgabe kann man sich auf Baummodelle bei der Wahl
 \item C5.0
 	\item Random-Trees
 	\item XGBoost-Baum
-	\item Tree-AS
-	\item C\&R-Tree
 \end{itemize} 
 
-Anfänglich  wurden alle von SPSS Modeler zu Verfügung gestellten Moellierungsknoten in Betracht gezogen, aber nicht alle lieferten brauchbare
+Anfänglich  wurden alle von SPSS Modeler zu Verfügung gestellten Modellierungsknoten betrachtet, aber nicht alle lieferten brauchbare
 Ergebnisse: Die Support Vector Machine (SVM) lieferte viele NULL-Werte.
 \par
 Hinsichtlich der Validierung wurde zusätzlich überprüft, ob sich die getroffene Merkmalauswahl positiv auf den erzielten Gewinn auswirken konnte. Dabei konnte erkannt werden, welche Felder welchen Einfluß auf die Modellierung besitzen.
@@ -479,14 +482,16 @@ target90 & \$R-target90\$ & Betrag
 1 & 1  & 0
 \end{tabular}
 \end{center}
-Der Wert 0 bedeutet in diesem Kontext, dass ein Gutschein versendet wird.
-
+Der Wert 0 im Feld \$R-target90\$ bedeutet die Vorhersage, dass ein Kunde keine erneute Bestellung tätigt.
 \begin{center}
 \includegraphics[width=\textwidth]{Screens/test_bewertung}
-\captionof{figure}{Testdesign}
+\captionof{figure}{Modellierung des Testdesigns}
 \end{center}
 
 \subsubsection{CHAID}
+{\bf Erklärung}:
+\par
+\vspace{0.2cm}
 Der CHAID-Knoten generiert Entscheidungsbäume unter der Verwendung der $\chi^2$  - Verteilung.
 Im Gegensatz zum C\&R-Baum  und QUEST können mit diesem Modell auch nicht binäre Bäume generiert werden, d.h. Bäume mit mehr als zwei
 Verzweigungen. Berücksichtigt wurde das Verhalten des Gewinnes unter Merkmalauswahl und Boosting auf dem class Datensatz. 
@@ -505,15 +510,29 @@ $\overline{\text{Merkwahlauswahl}}$ & 8,697.00\;\euro  &  8,548.50\;\euro
 
 \begin{center}
 \includegraphics[width=\textwidth]{Screens/chaid}
-\captionof{figure}{CHAID - ohne Merkmalauswahl}
+\captionof{figure}{CHAID-Modellierung - ohne Merkmalauswahl}
 \end{center}
 
 \begin{center}
 \includegraphics[width=\textwidth]{Screens/chaid_m}
-\captionof{figure}{CHAID - mit Merkmalauswahl}
+\captionof{figure}{CHAID-Modellierung - mit Merkmalauswahl}
 \end{center}
 
-Bemwerkenswert hierbei ist, dass Verwendung der Merkmalauswahl ein schlechteres Ergebnis produziert als ohne diese.
+{\bf Auswirkung der Merkmalauswahl}:
+\par
+\vspace{0.2cm}
+Die Verwendung der Merkmalauswahl produziert ein schlechteres Ergebnis als ohne diese, d.h. die Merkmalauswahl für dieses Modell wurde unpassend gewählt.
+\par
+\vspace{0.2cm}
+
+{\bf Auswirkung der Fehlklassifizierung:}
+\par
+\vspace{0.2cm}
+Bei Baummodellen kann eine Gewichtung der Fehlklassifikationen vorgenommen werden. Diese
+Gewichtung dient der Anpassung, indem eine Fehlklassifizierung höhere
+Kosten bedeutet. Ohne vorgeschaltete Merkmalauswahl und ohne Boosting bei einer Fehlklassifizierung mit dem Faktor 3.0 berechnet der CHAID-Algorithmus einen Gewinn von 8,548.50\;\euro\;
+was zu keiner Verbesserung führt.
+
 \subsubsection{C5.0}
 {\bf Erklärung}:
 \par
@@ -547,9 +566,7 @@ Im Gegensatz zum CHAID-Algorithmus, verbessert eine vorgeschaltete Merkmalauswah
 
 {\bf Auswirkung der Fehlklassifizierung:}
 \par
-Bei Baummodellen kann eine Gewichtung der Fehlklassifikationen vorgenommen werden. Diese
-Gewichtung dient der Anpassung, indem eine Fehlklassifizierung höhere
-Kosten bedeutet. Bei einer Fehlklassifizierung mit dem Faktor 3.0 berechnet der C5.0-Algorithmus einen Gewinn von 9,028.50\;\euro,\; mit vorgeschalteter Merkmalauswahl erhält man sogar einen Gewinn von 9,055.00\;\euro\; auf dem class Datensatz.
+ Bei einer Fehlklassifizierung mit dem Faktor 3.0 berechnet der C5.0-Algorithmus einen Gewinn von 9,028.50\;\euro,\; mit vorgeschalteter Merkmalauswahl erhält man sogar einen Gewinn von 9,055.00\;\euro\; auf dem class Datensatz.
 
 \subsubsection{Random-Trees}
 {\bf Erklärung}:
@@ -561,31 +578,58 @@ Random Trees entspricht in der grundlegenden Vorghensweise der des C\&R-Baums, e
 diesen jedoch um zwei Punkte: Zum einen wird in diesem Modell Bagging verwendet, um
 ein Overfitting des Datensatzes zu vermeiden. Zum anderen wird für jede Aufteilung des Baums
 lediglich eine Stichprobe der Input-Werte zur Errechnung der Unreinheit benutzt.
-Mittels dieses Modells konnten auf dem class Datensatz 10,143.50 \euro  Gewinn vorhergesagt werden.
+Mittels dieses Modells konnten auf dem class Datensatz maximal 10,143.50 \euro\;  Gewinn vorhergesagt werden:
+
+\begin{center}
+	\begin{tabular}{l | c | c | c}
+	
+	Fehlklassifizierungskosten & -- &  1.0 &  3.0
+	\\
+	\hline
+	Merkmalauswahl  & 10,113.50\;\euro  & 10,143.50\;\euro & 10,143.50\;\euro
+	\\
+	$\overline{Merkmalauswahl}$  & 10,109.00\;\euro &  10,109.00\;\euro & 10,109.00\;\euro
+	
+	\end{tabular}
+\end{center}
 
 \begin{center}
 \includegraphics[width=\textwidth]{Screens/random_trees}
-\captionof{figure}{Random Trees Modellierung}
+\captionof{figure}{Random-Trees Modellierung}
 \end{center}
 
 {\bf Auswirkung der Merkmalauswahl und der Fehlklassifizierungskosten}:
 \par
-Unter Verwendung der Merkmalauswahl liefert der Random Trees-Algorithmus leicht bessere Ergebnisse, eine zusätzliche Verwendung der Fehlklssifizierungskosten konnte auch bei Gewichtung mit 3.0 keine Verbesserung mehr bewirken.
+Bei Verwendung der Merkmalauswahl liefert der Random Trees-Algorithmus leicht bessere Ergebnisse.
+Daran lässt sich erkennen, dass die Merkmalauswahl für dieses Modell sinvoll gewählt wurde.
+Eine zusätzliche Verwendung der Fehlklassifizierungskosten verbesserte das Ergebnis ebenfalls, eine Erhöhung der Gewichtung mit dem Faktor 3.0 lieferte allerdings keine weitere Verbesserung.
 
 \begin{center}
 \includegraphics[width=\textwidth]{Screens/random_trees_m}
-\captionof{figure}{Random Trees Modellierung mit Merkmalauswahl}
+\captionof{figure}{Random-Trees Modellierung mit Merkmalauswahl}
 \end{center}
 
 \subsubsection{XGBoost-Baum}
+{\bf Erklärung}:
+\par
+\vspace{0.2cm}
+Dieser Modellierungsknoten ist die erweiterte Implementierung eines Gradienten-Boosting-Algorithmus mit einem
+Baummodell als Basismodell. Boosting-Algorithmen lernen iterativ schwache Klassifikationsmerkmale
+und fügen Sie einem endgültigen starken Klassifikationsmerkmal hinzu.
 
-\subsubsection{Tree-AS}
-\subsubsection{C\&R-Tree}
+
+
+\section{Evaluierung und Bereitstellung}
+
+\newpage
+\section{Tabellenverzeichnis}
+\listoftables 
 
 
 \newpage
 \section{Abbildungsverzeichnis}
 \listoffigures
+\addcontentsline{toc}{section}{Abbildungsverzeichnis}
 \newpage
 
 \newpage
@@ -593,8 +637,8 @@ Unter Verwendung der Merkmalauswahl liefert der Random Trees-Algorithmus leicht 
 \thispagestyle{plain}
 \begin{thebibliography}{DiplRS}
 \bibitem[1]{crisp} {\it CRISP-DM: Ein Standard-Prozess-Modell für Data Mining} \url{ https://statistik-dresden.de/archives/1128}.
-\bibitem[2]{nodes} {\it IBM SPSS Modeler 18.0 Modellierungsknoten} 
-\url{ftp://public.dhe.ibm.com/software/analytics/spss/documentation/modeler/18.0/de/ModelerModelingNodes.pdf}
+\bibitem[2]{nodes} {\it IBM SPSS Modeler 18.1 Modellierungsknoten} 
+\url{ftp://public.dhe.ibm.com/software/analytics/spss/documentation/modeler/18.1/de/ModelerModelingNodes.pdf}
 \end{thebibliography}
 
 \newpage

@@ -1,9 +1,10 @@
 \select@language {ngerman}
 \contentsline {figure}{\numberline {1}{\ignorespaces Erstellte Felder}}{6}{figure.1}
-\contentsline {figure}{\numberline {2}{\ignorespaces Testdesign}}{9}{figure.2}
-\contentsline {figure}{\numberline {3}{\ignorespaces CHAID - ohne Merkmalauswahl}}{9}{figure.3}
-\contentsline {figure}{\numberline {4}{\ignorespaces CHAID - mit Merkmalauswahl}}{10}{figure.4}
-\contentsline {figure}{\numberline {5}{\ignorespaces C5.0 - ohne Merkmalauswahl}}{10}{figure.5}
-\contentsline {figure}{\numberline {6}{\ignorespaces C5.0 - mit Merkmalauswahl}}{11}{figure.6}
-\contentsline {figure}{\numberline {7}{\ignorespaces Random Trees Modellierung}}{12}{figure.7}
-\contentsline {figure}{\numberline {8}{\ignorespaces Random Trees Modellierung mit Merkmalauswahl}}{12}{figure.8}
+\contentsline {figure}{\numberline {2}{\ignorespaces Merkmalauswahl}}{8}{figure.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces Modellierung des Testdesigns}}{9}{figure.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces CHAID-Modellierung - ohne Merkmalauswahl}}{10}{figure.4}
+\contentsline {figure}{\numberline {5}{\ignorespaces CHAID-Modellierung - mit Merkmalauswahl}}{10}{figure.5}
+\contentsline {figure}{\numberline {6}{\ignorespaces C5.0 - ohne Merkmalauswahl}}{11}{figure.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces C5.0 - mit Merkmalauswahl}}{12}{figure.7}
+\contentsline {figure}{\numberline {8}{\ignorespaces Random-Trees Modellierung}}{13}{figure.8}
+\contentsline {figure}{\numberline {9}{\ignorespaces Random-Trees Modellierung mit Merkmalauswahl}}{13}{figure.9}
