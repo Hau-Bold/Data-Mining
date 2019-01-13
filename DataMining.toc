@@ -25,9 +25,9 @@
 \contentsline {subsubsection}{\numberline {4.2.1}CHAID}{10}{subsubsection.4.2.1}
 \contentsline {subsubsection}{\numberline {4.2.2}C5.0}{11}{subsubsection.4.2.2}
 \contentsline {subsubsection}{\numberline {4.2.3}Random-Trees}{12}{subsubsection.4.2.3}
-\contentsline {subsubsection}{\numberline {4.2.4}XGBoost-Baum}{13}{subsubsection.4.2.4}
-\contentsline {section}{\numberline {5}Evaluierung und Bereitstellung}{13}{section.5}
-\contentsline {section}{\numberline {6}Tabellenverzeichnis}{14}{section.6}
-\contentsline {section}{\numberline {7}Abbildungsverzeichnis}{15}{section.7}
-\contentsline {section}{Abbildungsverzeichnis}{15}{section*.3}
-\contentsline {section}{\numberline {8}Literaturverzeichnis}{16}{section.8}
+\contentsline {subsubsection}{\numberline {4.2.4}XGBoost-Baum}{14}{subsubsection.4.2.4}
+\contentsline {section}{\numberline {5}Evaluierung und Bereitstellung}{15}{section.5}
+\contentsline {section}{\numberline {6}Tabellenverzeichnis}{16}{section.6}
+\contentsline {section}{\numberline {7}Abbildungsverzeichnis}{17}{section.7}
+\contentsline {section}{Abbildungsverzeichnis}{17}{section*.3}
+\contentsline {section}{\numberline {8}Literaturverzeichnis}{18}{section.8}
