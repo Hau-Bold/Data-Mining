@@ -21,12 +21,17 @@
 \BOOKMARK [1][-]{section.4}{Modellierung}{}% 21
 \BOOKMARK [2][-]{subsection.4.1}{Wahl der Modellierungsknoten}{section.4}% 22
 \BOOKMARK [2][-]{subsection.4.2}{Test-Design}{section.4}% 23
-\BOOKMARK [3][-]{subsubsection.4.2.1}{CHAID}{subsection.4.2}% 24
-\BOOKMARK [3][-]{subsubsection.4.2.2}{C5.0}{subsection.4.2}% 25
-\BOOKMARK [3][-]{subsubsection.4.2.3}{Random-Trees}{subsection.4.2}% 26
-\BOOKMARK [3][-]{subsubsection.4.2.4}{XGBoost-Baum}{subsection.4.2}% 27
-\BOOKMARK [1][-]{section.5}{Evaluierung und Bereitstellung}{}% 28
-\BOOKMARK [1][-]{section.6}{Tabellenverzeichnis}{}% 29
-\BOOKMARK [1][-]{section.7}{Abbildungsverzeichnis}{}% 30
-\BOOKMARK [1][-]{section*.3}{Abbildungsverzeichnis}{}% 31
-\BOOKMARK [1][-]{section.8}{Literaturverzeichnis}{}% 32
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Merkmalauswahl}{subsection.4.2}% 24
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Fehlklassifizierungskosten}{subsection.4.2}% 25
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Boosting}{subsection.4.2}% 26
+\BOOKMARK [3][-]{subsubsection.4.2.4}{Umsetzung}{subsection.4.2}% 27
+\BOOKMARK [2][-]{subsection.4.3}{Getestete Modellierungsknoten}{section.4}% 28
+\BOOKMARK [3][-]{subsubsection.4.3.1}{CHAID}{subsection.4.3}% 29
+\BOOKMARK [3][-]{subsubsection.4.3.2}{C5.0}{subsection.4.3}% 30
+\BOOKMARK [3][-]{subsubsection.4.3.3}{Random-Trees}{subsection.4.3}% 31
+\BOOKMARK [3][-]{subsubsection.4.3.4}{XGBoost-Baum}{subsection.4.3}% 32
+\BOOKMARK [1][-]{section.5}{Evaluierung und Bereitstellung}{}% 33
+\BOOKMARK [1][-]{section.6}{Tabellenverzeichnis}{}% 34
+\BOOKMARK [1][-]{section.7}{Abbildungsverzeichnis}{}% 35
+\BOOKMARK [1][-]{section*.3}{Abbildungsverzeichnis}{}% 36
+\BOOKMARK [1][-]{section.8}{Literaturverzeichnis}{}% 37

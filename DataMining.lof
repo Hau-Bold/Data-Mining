@@ -1,12 +1,10 @@
 \select@language {ngerman}
-\contentsline {figure}{\numberline {1}{\ignorespaces Erstellte Felder}}{6}{figure.1}
-\contentsline {figure}{\numberline {2}{\ignorespaces Merkmalauswahl}}{8}{figure.2}
-\contentsline {figure}{\numberline {3}{\ignorespaces Modellierung des Testdesigns}}{10}{figure.3}
-\contentsline {figure}{\numberline {4}{\ignorespaces CHAID-Modellierung ohne Merkmalauswahl}}{10}{figure.4}
-\contentsline {figure}{\numberline {5}{\ignorespaces CHAID-Modellierung mit Merkmalauswahl}}{11}{figure.5}
-\contentsline {figure}{\numberline {6}{\ignorespaces C5.0-Modellierung ohne Merkmalauswahl}}{12}{figure.6}
-\contentsline {figure}{\numberline {7}{\ignorespaces C5.0-Modellierung mit Merkmalauswahl}}{12}{figure.7}
-\contentsline {figure}{\numberline {8}{\ignorespaces Random-Trees Modellierung ohne Merkmalauswahl}}{13}{figure.8}
-\contentsline {figure}{\numberline {9}{\ignorespaces Random-Trees-Modellierung mit Merkmalauswahl}}{13}{figure.9}
-\contentsline {figure}{\numberline {10}{\ignorespaces XGBoost-Baum -Modellierung ohne Merkmalauswahl}}{14}{figure.10}
-\contentsline {figure}{\numberline {11}{\ignorespaces XGBoost-Baum -Modellierung mit Merkmalauswahl}}{14}{figure.11}
+\contentsline {figure}{\numberline {1}{\ignorespaces Erstellte Felder}}{7}{figure.1}
+\contentsline {figure}{\numberline {2}{\ignorespaces Merkmalauswahl}}{9}{figure.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces Modellierung des Testdesigns}}{11}{figure.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces CHAID-Modellierung mit Merkmalauswahl}}{12}{figure.4}
+\contentsline {figure}{\numberline {5}{\ignorespaces C5.0-Modellierung ohne Merkmalauswahl}}{13}{figure.5}
+\contentsline {figure}{\numberline {6}{\ignorespaces C5.0-Modellierung mit Merkmalauswahl}}{13}{figure.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces Random-Trees Modellierung ohne Merkmalauswahl}}{14}{figure.7}
+\contentsline {figure}{\numberline {8}{\ignorespaces Random-Trees-Modellierung mit Merkmalauswahl}}{15}{figure.8}
+\contentsline {figure}{\numberline {9}{\ignorespaces XGBoost-Baum -Modellierung mit Merkmalauswahl}}{16}{figure.9}

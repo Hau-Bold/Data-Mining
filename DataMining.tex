@@ -238,7 +238,7 @@ Es konnten drei zentrale Erfolgskriterien für das Projekt identifiziert werden:
 \begin{itemize}
 	\item Entscheidung ob ein Kunde einen Gutschein erhält
 	\item Maximierung des Gewinns im Datensatz dmc2010 class.txt
-	\item Ab einem Gewinn von 9.310,50\euro\; im Testdatensatz und 8547,50\euro\; im class-Datensatz\footnote{Dieser Werte wird ebenfalls mit Gl.$(\ref{gl1})$  aus dmc2010$\_$real.txt ermittelt.} liegt ein erfolgreiches Datamining vor
+	\item Ab einem Gewinn von 9310,50\euro\; im Testdatensatz und 8547,50\euro\; im class-Datensatz\footnote{Dieser Werte wird ebenfalls mit Gl.$(\ref{gl1})$  aus dmc2010$\_$real.txt ermittelt.} liegt ein erfolgreiches Datamining vor
 \end{itemize}
 
 \textbf{Bemerkung}:
@@ -461,9 +461,41 @@ Anfänglich  wurden alle von SPSS Modeler zu Verfügung gestellten Modellierungs
 Ergebnisse: Die Support Vector Machine (SVM) lieferte viele NULL-Werte.
 \par
 Hinsichtlich der Validierung wurde zusätzlich überprüft, ob sich die getroffene Merkmalauswahl positiv auf den erzielten Gewinn auswirken konnte. Dabei konnte erkannt werden, welche Felder welchen Einfluß auf die Modellierung besitzen.
+
 \subsection{Test-Design}
-Ziel der Testausführung ist eine automatisierte Auswertung der verwendeten Modellierungsknoten aus den Datensätzen:
-Das jeweilige Modell-Nugget erstellt das Feld \$R-Target90\$ aus dem class-Datensatz welches anschließend mit dem realen Feld target90 verglichen werden soll.
+Ziel der Testausführung ist eine automatisierte Auswertung der verwendeten Modellierungsknoten aus den Datensätzen. Da jeder Modellierungsknoten über bestimmte Einstellungen verfügt, wurden diese in den jeweiligen Tests berücksichtigt und sollen daher im folgenden kurz besprochen werden. Die Informationen sind \cite{nodes} entnommen.
+
+\subsubsection{Merkmalauswahl}
+Der Merkmalauswahlknoten sichtet die Eingabefelder, um auf der Grundlage einer Reihe von
+Kriterien (z. B. dem Prozentsatz der fehlenden Werte) zu entscheiden, ob diese entfernt werden sollen. 
+Anschließend erstellt er eine Wichtigkeitsrangfolge der verbleibenden Eingaben in Bezug auf ein angegebenes Ziel. 
+
+\subsubsection{Fehlklassifizierungskosten}
+Fehlklassifizierungskosten sind im Grunde Gewichtungen, die auf bestimmte Ergebnisse angewendet
+werden. Diese Gewichtungen werden in das Modell mit einbezogen und können die Vorhersage (als Schutz gegen kostspielige Fehler) ändern. 
+
+\par
+\vspace{0.2cm}
+Im Falle einer Verbesserung der Gewinnprognose durch Verwendung der Fehlklassifizierungskosten wird überprüft ob sich die Prognose durch Modifikation der Werte weiter verbessert.
+
+\subsubsection{Boosting}
+
+Diese Option erhöht die Modellgenauigkeit. Das Boosting funktioniert
+so, dass mehrere Modelle in einer Folge erstellt werden. Das erste Modell wird auf die übliche Weise
+erstellt. Anschließend wird ein zweites Modell erstellt, bei dem besonders die Datensätze berücksichtigt
+werden, bei denen es im ersten Modell zu Fehlklassifizierungen kam. Das dritte Modell wird in Bezug
+auf die im zweiten Modell enthaltenen Fehler erstellt usw. Zum Schluss werden die Fälle klassifiziert,
+indem der gesamte Modellsatz auf ihnen angewendet wird, 
+wobei ein gewichtetes Voting-Verfahren genutzt wird, um die einzelnen Vorhersagen zu einer Gesamtvorhersage zu kombinieren.
+ Das Boosting kann die Genauigkeit eines Entscheidungsbaummodells signifikant verbessern, macht aber auch ein
+längeres Training notwendig.
+\par
+\vspace{0.2cm}
+Sofern der zu testende Modellierungsknoten über diese Option verfügt, wird die Gewinnprognose  in Abhängigkeit von Boosting betrachtet.
+
+\subsubsection{Umsetzung}
+Das jeweilige Modell generiert auf dem Trainingsdatensatz mit target90 als Ziel ein Nugget. Diese Nugget wird auf den class-Datensatz angewandt um dort das Verhalten des Feldes target90 zu prognostizieren (\$R-Target90\$), welches mit dem entsprechenden Feld des dmc2010$\_$real Datensatzes verglichen werden kann.
+
 Zu diesem Zweck wird die Entscheidungstabelle modifiziert:
 \begin{table}[h]
 \begin{center}
@@ -490,7 +522,7 @@ Der Wert 0 im Feld \$R-target90\$ prognostiziert, dass ein Kunde keine erneute B
 \includegraphics[width=\textwidth]{Screens/test_bewertung}
 \captionof{figure}{Modellierung des Testdesigns}
 \end{center}
-
+\subsection{Getestete Modellierungsknoten}
 \subsubsection{CHAID}
 {\bf Erklärung}:
 \par
@@ -500,7 +532,7 @@ Im Gegensatz zum C\&R-Baum  und QUEST können mit diesem Modell auch nicht binä
 Verzweigungen. 
 \par
 \vspace{0.2cm}
-Berücksichtigt wurde das Verhalten des Gewinnes unter Merkmalauswahl und Boosting auf dem class-Datensatz. 
+Betrachtet wird das Verhalten des Gewinnes unter Merkmalauswahl und Boosting auf dem class-Datensatz. 
 
 \begin{table}[h]
 \begin{center}
@@ -508,19 +540,14 @@ Berücksichtigt wurde das Verhalten des Gewinnes unter Merkmalauswahl und Boosti
  & Boosting & $\overline{\text{Boosting}}$
 \\
 \hline
-Merkwahlauswahl  &  8,548.50\;\euro & 8,575.00\;\euro
+Merkwahlauswahl  &  8548.50\;\euro & 8575\;\euro
 \\
-$\overline{\text{Merkwahlauswahl}}$ & 8,697.00\;\euro  &  8,548.50\;\euro
+$\overline{\text{Merkwahlauswahl}}$ & 8697\;\euro  &  8548.50\;\euro
 \\
 \end{tabular}
 \caption{Vorhersage der CHAID-Modellierung}
 \end{center}
 \end{table}
-
-\begin{center}
-\includegraphics[width=\textwidth]{Screens/chaid}
-\captionof{figure}{CHAID-Modellierung ohne Merkmalauswahl}
-\end{center}
 
 \begin{center}
 \includegraphics[width=\textwidth]{Screens/chaid_m}
@@ -555,7 +582,7 @@ der untersten Ebene noch einmal untersucht, wobei solche entfernt oder reduziert
 wesentlich zum Wert des Modells beitragen.
 \par
 \vspace{0.2cm}
-Mit dem C5.0-Algorithmus werden für den class-Datensatz 9,055.00\;\euro\; Gewinn vorhergesagt, also eine deutliche Verbesserung gegenüber der Vorhersage des CHAID-Knotens.
+Mit dem C5.0-Algorithmus werden für den class-Datensatz 9055\;\euro\; Gewinn vorhergesagt, also eine deutliche Verbesserung gegenüber der Vorhersage des CHAID-Knotens.
 
 \begin{center}
 \includegraphics[width=\textwidth]{Screens/c50}
@@ -569,16 +596,18 @@ Mit dem C5.0-Algorithmus werden für den class-Datensatz 9,055.00\;\euro\; Gewin
 
 {\bf Auswirkung der Merkmalauswahl}:
 \par
-Im Gegensatz zum CHAID-Algorithmus, verbessert eine vorgeschaltete Merkmalauswahl hier den vorhergesagten Gewinn: Ohne vorgeschaltete Merkmalauswahl erziehlt der Algorithmus 8,548.50\;\euro\; Gewinn, mit dieser sogar 8,732.00\;\euro\; auf dem class-Datensatz.
+Im Gegensatz zum CHAID-Algorithmus, verbessert eine vorgeschaltete Merkmalauswahl hier den vorhergesagten Gewinn: Ohne vorgeschaltete Merkmalauswahl erziehlt der Algorithmus 8548.50\;\euro\; Gewinn, mit dieser sogar 8732\;\euro\; auf dem class-Datensatz.
 \par
 \vspace{0.2cm}
 
 {\bf Auswirkung der Fehlklassifizierung:}
 \par
- Bei einer Fehlklassifizierung mit dem Faktor 3.0 liefert der C5.0-Algorithmus eine Prognose von 9,028.50\;\euro,\; für den Gewinn auf dem class-Datensatz, mit vorgeschalteter Merkmalauswahl erhält man sogar einen Gewinn von 9,055.00\;\euro\;.
+ Bei einer Fehlklassifizierung mit dem Faktor 3.0 liefert der C5.0-Algorithmus eine Prognose von 9028.50\;\euro,\; für den Gewinn auf dem class-Datensatz, mit vorgeschalteter Merkmalauswahl erhält man sogar einen Gewinn von 9055.00\;\euro\;.
 
 \subsubsection{Random-Trees}
 Dieser Knoten erweist sich hinsichtlich der Modellierung als am besten geeignet.
+\par
+\vspace{0.2cm}
 {\bf Erklärung}:
 \par
 \vspace{0.2cm}
@@ -589,7 +618,7 @@ ein Overfitting des Datensatzes zu vermeiden. Zum anderen wird für jede Aufteil
 lediglich eine Stichprobe der Input-Werte zur Errechnung der Unreinheit benutzt.
 \par
 \vspace{0.2cm}
-Mittels dieses Modells konnten auf dem class-Datensatz maximal 10,143.50 \euro\;  Gewinn vorhergesagt werden:
+Mittels dieses Modells konnten auf dem class-Datensatz maximal 10143.50 \euro\;  Gewinn vorhergesagt werden:
 
 \begin{table}[h]
 \begin{center}
@@ -598,9 +627,9 @@ Mittels dieses Modells konnten auf dem class-Datensatz maximal 10,143.50 \euro\;
 	Fehlklassifizierungskosten & -- &  1.0 &  3.0
 	\\
 	\hline
-	Merkmalauswahl  & 10,113.50\;\euro  & 10,143.50\;\euro & 10,143.50\;\euro
+	Merkmalauswahl  & 10113.50\;\euro  & 10143.50\;\euro & 10143.50\;\euro
 	\\
-	$\overline{Merkmalauswahl}$  & 10,109.00\;\euro &  10,109.00\;\euro & 10,109.00\;\euro
+	$\overline{\text{Merkmalauswahl}}$  & 10109\;\euro &  10109\;\euro & 10109\;\euro
 	
 \end{tabular}
 \caption{Vorhersage der Random-Trees-Modellierung}
@@ -632,25 +661,20 @@ Baummodell als Basismodell. Boosting-Algorithmen lernen iterativ schwache Klassi
 und fügen diese einem endgültigen starken Klassifikationsmerkmal hinzu.
 \par
 \vspace{0.2cm}
-Für den vorliegenden class-Datensatz liefert der Algorithmus eine maximal Gewinnprognose von 8,910.50\;\euro\;:
+Für den vorliegenden class-Datensatz liefert der Algorithmus eine maximal Gewinnprognose von 8910.50\;\euro\;:
 \begin{table}[h]
 \begin{center}
 	\begin{tabular}{c | c}
-	 &
+	 & Prognose
 	\\
 	\hline
-	Merkmalauswahl & 8,910.50\;\euro
+	Merkmalauswahl & 8910.50\;\euro
 	\\
-	$\overline{\text{Merkmalauswahl}}$ & 8,849.50\;\euro
+	$\overline{\text{Merkmalauswahl}}$ & 8849.50\;\euro
 	\end{tabular}
 \end{center}
 \caption{Vorhersage der XGBoost-Baum-Modellierung}
 \end{table}
-
-\begin{center}
-\includegraphics[width=\textwidth]{Screens/xrandom}
-\captionof{figure}{XGBoost-Baum -Modellierung ohne Merkmalauswahl}
-\end{center}
 
 \begin{center}
 \includegraphics[width=\textwidth]{Screens/xrandom_m}
@@ -661,6 +685,26 @@ Für den vorliegenden class-Datensatz liefert der Algorithmus eine maximal Gewin
 \par
 Die vorgeschaltete Merkmalauswahl liefert nur eine geringe Verbesserung der Gewinnprognose um 61\;\euro, die gewählten Felder besitzen also vermutlich nur eine geringe Korrelation zu dem Kaufverhalten (Der XGBoost-Baum Algorithmus stellt keine Information über die Modellbildung zu Verfügung).
 \section{Evaluierung und Bereitstellung}
+
+
+Die Evaluierung erfolgte durch Anwendung der entwickelten Modelle auf den class-Datensatz. Der jeweilige Gewinn wurde mit Hilfe der modifizierten Entscheidungsmatrix wie in Kapitel 4.2 beschrieben, ermittelt.
+
+\begin{table}[h]
+\begin{tabular}{c | c | c | c | c  | c}
+Modellierungsknoten & -- & CHAID & C5.0 & Random Trees & XGBoost-Baum
+\\
+\hline
+Errechnete Prognose & 8548.50\;\euro & 8697\;\euro & 9055\;\euro & 10758.50\;\euro & 8910.50\;\euro
+\\
+\hline
+Gewinn & 0 \;euro & 148.50\;\euro & 506.50\;\euro & 2210 \;\euro & 362\;\euro
+\\
+\hline
+relativer Gewinn & 0$\%$ & 1.74$\%$ & 5.93$\%$ & 25.85$\%$ & 4.23$\%$
+
+\end{tabular}
+\caption{Gewinnübersicht auf dem class-Datensatz}
+\end{table}
 
 \newpage
 \section{Tabellenverzeichnis}
