@@ -24,11 +24,11 @@
 \contentsline {subsection}{\numberline {4.2}Test-Design}{10}{subsection.4.2}
 \contentsline {subsubsection}{\numberline {4.2.1}Merkmalauswahl}{10}{subsubsection.4.2.1}
 \contentsline {subsubsection}{\numberline {4.2.2}Fehlklassifizierungskosten}{10}{subsubsection.4.2.2}
-\contentsline {subsubsection}{\numberline {4.2.3}Boosting}{11}{subsubsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.3}Boosting}{10}{subsubsection.4.2.3}
 \contentsline {subsubsection}{\numberline {4.2.4}Umsetzung}{11}{subsubsection.4.2.4}
-\contentsline {subsection}{\numberline {4.3}Getestete Modellierungsknoten}{12}{subsection.4.3}
-\contentsline {subsubsection}{\numberline {4.3.1}CHAID}{12}{subsubsection.4.3.1}
-\contentsline {subsubsection}{\numberline {4.3.2}C5.0}{13}{subsubsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3}Getestete Modellierungsknoten}{11}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}CHAID}{11}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}C5.0}{12}{subsubsection.4.3.2}
 \contentsline {subsubsection}{\numberline {4.3.3}Random-Trees}{14}{subsubsection.4.3.3}
 \contentsline {subsubsection}{\numberline {4.3.4}XGBoost-Baum}{15}{subsubsection.4.3.4}
 \contentsline {section}{\numberline {5}Evaluierung und Bereitstellung}{16}{section.5}

@@ -267,7 +267,6 @@ zugrunde gelegt: Jeder Kunde erhält einen Gutschein. Unter der Annahme, dass je
 \begin{align}
 (26377 *1.50 - 6051*5)\;\text{\euro} = 9310,50\;\text{\euro}\label{gl1}
 \end{align}
-Diese Werte müssen in der Modellbildung übertroffen werden.
 
 \subsection{Projektplanung}
 Für die Projektdurchführung wurde zu Projektbeginn der Aufwand in
@@ -449,18 +448,32 @@ Damit stehen für die Modellierung zehn Felder zu Verfügung:
 Als Grundlage für die Modellierung werden die unter ~\ref{Referenzwerte} ermittelten Referenzwerte verwendet. Ziel der Modellierung ist eine Maximierung des Gewinns, also ein Modell zu entwickeln, dessen Gewinn die berechneten Gewinne übertrifft.  
 \subsection{Wahl der Modellierungsknoten}
 Die Erklärungen zu den einzelnen Knoten sind \cite{nodes} entnommen und können dort nachgelesen werden. 
-Hinsichtlich der Struktur der Aufgabe kann man sich auf Baummodelle bei der Wahl der Knoten im SPSS Modeler beschränken. Hierfür wurden folgende Modellierungsknoten in Betracht gezogen:
+Anfänglich  wurden alle von SPSS Modeler zu Verfügung gestellten Modellierungsknoten betrachtet, aber nicht alle lieferten brauchbare
+Ergebnisse: Als Beispiel sei nur die Support Vector Machine (SVM) genannt, welche viele NULL-Werte lieferte.
+\par
+Aufgrund der Struktur der Aufgabe beschränkt man sich auf Baummodelle bei der Wahl der Knoten im SPSS Modeler. Unter diesen wurden folgende in Betracht gezogen:
+\par
+\vspace{1cm}
+\begin{minipage}[h]{.5\textwidth}
+\begin{flushleft}
 \begin{itemize}
 \item CHAID
 \item C5.0
+\end{itemize}
+\end{flushleft}
+\end{minipage}
+\hfill
+\begin{minipage}[h]{.5\textwidth}
+\begin{flushright}
+\begin{itemize}
 	\item Random-Trees
 	\item XGBoost-Baum
 \end{itemize} 
-
-Anfänglich  wurden alle von SPSS Modeler zu Verfügung gestellten Modellierungsknoten betrachtet, aber nicht alle lieferten brauchbare
-Ergebnisse: Die Support Vector Machine (SVM) lieferte viele NULL-Werte.
+\end{flushright}
+\end{minipage}
 \par
-Hinsichtlich der Validierung wurde zusätzlich überprüft, ob sich die getroffene Merkmalauswahl positiv auf den erzielten Gewinn auswirken konnte. Dabei konnte erkannt werden, welche Felder welchen Einfluß auf die Modellierung besitzen.
+\vspace{1cm}
+\par
 
 \subsection{Test-Design}
 Ziel der Testausführung ist eine automatisierte Auswertung der verwendeten Modellierungsknoten aus den Datensätzen. Da jeder Modellierungsknoten über bestimmte Einstellungen verfügt, wurden diese in den jeweiligen Tests berücksichtigt und sollen daher im folgenden kurz besprochen werden. Die Informationen sind \cite{nodes} entnommen.
@@ -494,7 +507,7 @@ längeres Training notwendig.
 Sofern der zu testende Modellierungsknoten über diese Option verfügt, wird die Gewinnprognose  in Abhängigkeit von Boosting betrachtet.
 
 \subsubsection{Umsetzung}
-Das jeweilige Modell generiert auf dem Trainingsdatensatz mit target90 als Ziel ein Nugget. Diese Nugget wird auf den class-Datensatz angewandt um dort das Verhalten des Feldes target90 zu prognostizieren (\$R-Target90\$), welches mit dem entsprechenden Feld des dmc2010$\_$real Datensatzes verglichen werden kann.
+Das jeweilige Modell generiert auf dem Trainingsdatensatz mit target90 als Ziel ein Nugget. Diese Nugget wird auf den class-Datensatz angewandt um dort das Verhalten des Feldes target90 zu prognostizieren (\$R-Target90\$). Schließlich wird mit dem  dmc2010$\_$real Datensatz der Gewinn berechnet.
 
 Zu diesem Zweck wird die Entscheidungstabelle modifiziert:
 \begin{table}[h]
@@ -661,7 +674,7 @@ Baummodell als Basismodell. Boosting-Algorithmen lernen iterativ schwache Klassi
 und fügen diese einem endgültigen starken Klassifikationsmerkmal hinzu.
 \par
 \vspace{0.2cm}
-Für den vorliegenden class-Datensatz liefert der Algorithmus eine maximal Gewinnprognose von 8910.50\;\euro\;:
+Für den vorliegenden class-Datensatz liefert der Algorithmus eine maximale Gewinnprognose von 8910.50\;\euro\;:
 \begin{table}[h]
 \begin{center}
 	\begin{tabular}{c | c}
@@ -691,7 +704,7 @@ Die Evaluierung erfolgte durch Anwendung der entwickelten Modelle auf den class-
 
 \begin{table}[h]
 \begin{tabular}{c | c | c | c | c  | c}
-Modellierungsknoten & -- & CHAID & C5.0 & Random Trees & XGBoost-Baum
+Modellierungsknoten & -- & CHAID & C5.0 & Random-Trees & XGBoost-Baum
 \\
 \hline
 Errechnete Prognose & 8548.50\;\euro & 8697\;\euro & 9055\;\euro & 10758.50\;\euro & 8910.50\;\euro
@@ -705,7 +718,7 @@ relativer Gewinn & 0$\%$ & 1.74$\%$ & 5.93$\%$ & 25.85$\%$ & 4.23$\%$
 \end{tabular}
 \caption{Gewinnübersicht auf dem class-Datensatz}
 \end{table}
-
+Auffällig hierbei ist der prognostizierte Gewinn der Random-Trees Modellierung.
 \newpage
 \section{Tabellenverzeichnis}
 \listoftables 
