@@ -209,17 +209,19 @@ Coburg, \today
 \pagebreak
 \section{Geschäftsverständnis}
 \subsection{Beschreibung der Situation}
-Das zu untersuchende System beschreibt einen Onlineshop dessen Produktpalette aus Medien wie z.B. CDs, Bücher, Hörbücher, ebooks und ebook-Readern besteht. Um gegenüber großen Online-Anbietern wettbewerbsfähig zu sein muß der Onlineshop regelmäßig Maßnahmen zur Aquise und Kundenbindung ergreifen. Eine Möglichkeit zur Kundenbindung besteht in einer Gutscheinausstellung. 
+Das zu untersuchende System beschreibt einen Onlineshop dessen Produktpalette aus Medien wie z.B. CDs, Bücher, Hörbücher, ebooks und ebook-Readern besteht. Um gegenüber großen Online-Anbietern wettbewerbsfähig bleiben zu können, muß der Onlineshop regelmäßig Maßnahmen zur Aquise und Kundenbindung ergreifen. Eine Möglichkeit zur Bindung der Kunden besteht in einer Gutscheinausstellung. 
 
 \subsubsection{Problembeschreibung}
-Viele Kunden tätigen meist nur eine Bestellung im Onlineshop. Es kann keine Vorhersage darüber getroffen werden ob ein Kunde eine weitere Bestellung tätigen oder sein Interesse an den Produkten des Onlineshops erlischt. Das Ziel dieser Arbeit besteht in der Bestimmung der Loyalität des einzelnen Kunden anhand von Merkmalen die sich aus den beigelegten Datensätzen erschließen lassen. Ist die Wahrscheinlichkeit sehr gering, dass ein Kunde einen weiteren Einkauf tätigt, erscheint es sinnvoll diesen mittels eines Gutscheins an den Onlineshop zu erinnern. Ist dagegen die Wahrscheinlicht eines erneuten Einkaufs eher hoch, so verursacht die Zusendung eines Gutscheins nur unnötige Kosten.  
+Viele Kunden tätigen meist nur eine Bestellung im Onlineshop. Es kann keine Vorhersage darüber getroffen werden ob ein Kunde eine weitere Bestellung tätigen oder sein Interesse an den Produkten des Onlineshops erlischt.
+\par
+Ziel dieser Arbeit ist die Ermittlung einer möglichst genauen Vorhersage der Loyalität des einzelnen Kunden anhand von Merkmalen die sich aus den beigelegten Datensätzen erschließen lassen. Ist die Bei geringer Wahrscheinlichkeit eines weiteren Einkaufs eines Kunden liegt es nahe diesen mittels eines Gutscheins an den Onlineshop zu erinnern. Ist dagegen die Wahrscheinlicht eines erneuten Einkaufs hoch, so verursacht die Zusendung eines Gutscheins nur unnötige Kosten.  
 \par
 Um dieses Problem zu lösen, soll mittels des CRISP-DM Modells \cite{crisp}
 und des Datamining-Tools SPSS von IBM eine Bewertung durchgeführt werden, welche die
 Loyalität des Kunden bestimmen soll. Hierfür wurden zwei *.txt-Dateien über Kundendaten geliefert.
 Als Lösung wird eine Abbildung der Kundennummer auf das zu erwartende Kaufverhalten gefordert. 
 
-Der abschließenden Vergleich kann über den Realdatzensatz Datei dmc2010$\_$real.txt geführt werden, welcher das reale Kaufverhalten dokumentiert.
+Der prognostizierte Gewinn kann mit dem Realdatzensatz dmc2010$\_$real.txt ermittelt werden.
 \subsection{Situationsbewertung}
 
 \subsubsection{Beschreibung der gelieferten Daten}
@@ -317,11 +319,11 @@ kann, dass diese keinen Einfluß auf das Ergebnis haben können. Als solche Feld
 \par
 \vspace{1cm}
 Die Anrede ("`salutation"') wurde zu Beginn als relevant eingestuft, in einem späteren Analyseschritt aber entfernt:
-Email-Domain oder Anrede  eines Kunden haben sicher wenig bis gar keinen Einfluß auf das Kaufverhalten des Kunden. Die Bedeutung des Feldes "`model"' konnte nicht schlüssig geklärt werden, daher wurde es auf Grund des vernachlässigbaren Prädikatoreinflusses entfernt.
+Email-Domain oder Anrede  eines Kunden haben sicher wenig bis gar keinen Einfluß auf das Kaufverhalten des Kunden. Die Bedeutung des Feldes "`model"' konnte nicht schlüssig geklärt werden, daher wurde es entfernt.
 Die Rechnungsadresse ("`invoicepostcode"') und die Lieferadresse ("`delivpostcode"') wurden auch verworfen da hier keine Rückschlüsse auf das Kaufverhalten des Kunden erkennbar sind. Außerdem erwies sich die Datenqualität des Feldes "`invoicepostcode"' als schlecht wegen vieler NULL-Werte.
 Der Werbecode ( "`advertisingdatacode"') wurde auf Grund schlechter Datenqualität entfernt. Punkte eingelöst ("`points"') schien zunächst relevant, da es Aufschluss über die Empfänglichkeit des Kunden für Werbeaktionen gibt, erwies sich aber als nicht hilfreich und wurde in einem späteren Schritt auf Grund der der zu schlechtene Datenqualität entfernt. Spezifische Artikelinformation wie Versandkosten ("`shippingcosts"') Gewicht ("`weight"') und Second Hand ("`used"') wurden auch entfernt, da sich hieraus keinerlei Information ableiten ließ.
 
-Zusätzlich wurden die Produktkategorien w0 - w10 gleich zu Beginn als uniteressant für die Modellbildung eingestuft.
+Zusätzlich wurden die Produktkategorien w0 - w10 gleich zu Beginn als uninteressant für die Modellbildung eingestuft.
 
 
 \subsubsection{Erfolgsversprechende Felder}
@@ -700,7 +702,7 @@ Die vorgeschaltete Merkmalauswahl liefert nur eine geringe Verbesserung der Gewi
 \section{Evaluierung und Bereitstellung}
 
 
-Die Evaluierung erfolgte durch Anwendung der entwickelten Modelle auf den class-Datensatz. Der jeweilige Gewinn wurde mit Hilfe der modifizierten Entscheidungsmatrix wie in Kapitel 4.2 beschrieben, ermittelt.
+Die Evaluierung erfolgte durch Anwendung der entwickelten Modelle auf den class-Datensatz. Der jeweilige Gewinn wurde mit Hilfe der modifizierten Entscheidungsmatrix wie in Kapitel 4.2 beschrieben, ermittelt. 
 
 \begin{table}[h]
 \begin{tabular}{c | c | c | c | c  | c}
@@ -710,15 +712,15 @@ Modellierungsknoten & -- & CHAID & C5.0 & Random-Trees & XGBoost-Baum
 Errechnete Prognose & 8548.50\;\euro & 8697\;\euro & 9055\;\euro & 10758.50\;\euro & 8910.50\;\euro
 \\
 \hline
-Gewinn & 0 \;euro & 148.50\;\euro & 506.50\;\euro & 2210 \;\euro & 362\;\euro
+Gewinn (Prognose) & 0 \;euro & 148.50\;\euro & 506.50\;\euro & 2210 \;\euro & 362\;\euro
 \\
 \hline
-relativer Gewinn & 0$\%$ & 1.74$\%$ & 5.93$\%$ & 25.85$\%$ & 4.23$\%$
+relativer Gewinn (Prognose) & 0$\%$ & 1.74$\%$ & 5.93$\%$ & 25.85$\%$ & 4.23$\%$
 
 \end{tabular}
 \caption{Gewinnübersicht auf dem class-Datensatz}
 \end{table}
-Auffällig hierbei ist der prognostizierte Gewinn der Random-Trees Modellierung.
+Auffällig hierbei ist der hohe prognostizierte Gewinn der Random-Trees Modellierung gegenüber den anderen Modellierungen. Ebenso fällt der sehr geringe prognostizierte Gewinn der CHAID-Modellierung auf.
 \newpage
 \section{Tabellenverzeichnis}
 \listoftables 
@@ -740,6 +742,7 @@ Auffällig hierbei ist der prognostizierte Gewinn der Random-Trees Modellierung.
 \end{thebibliography}
 
 \newpage
+\section{Erklärung}
 \begin{titlepage}
 \section*{Erklärung:}
 \noindent {\large Die vorliegende Projektarbeit wurde am Institut für Informatik  der Hochschule Coburg nach einem Thema von Herrn Dr.~Detlef~Bittner erstellt.

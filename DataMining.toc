@@ -36,3 +36,4 @@
 \contentsline {section}{\numberline {7}Abbildungsverzeichnis}{18}{section.7}
 \contentsline {section}{Abbildungsverzeichnis}{18}{section*.3}
 \contentsline {section}{\numberline {8}Literaturverzeichnis}{19}{section.8}
+\contentsline {section}{\numberline {9}Erkl\IeC {\"a}rung}{20}{section.9}
